@@ -6,7 +6,7 @@ A Graphical user interface for userscripts. Creating user-friendly userscripts c
 
 ## Get started
 
-I'm glad you're interested in using UserGui, welcome! To get started, please take a look at the [documentation]().
+I'm glad you're interested in using UserGui, welcome! To get started, please take a look at the [documentation](documentation.md).
 
 ## Feature overview
 
