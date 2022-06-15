@@ -26,7 +26,6 @@ const Gui = new UserGui;
 ```js
 Gui.settings.window.title = "GUI Demo"; // set window title
 Gui.settings.window.centered = true; // GUI starts at the center of the screen
-Gui.settings.window.external = true; // GUI opens up externally
 Gui.settings.gui.internal.darkCloseButton = true; // Changes the close button to dark theme
 ```
 
@@ -63,6 +62,41 @@ Currently, your GUI is a dead shell. We need to add event listeners to make it a
 Inside the `Gui.open(readyFunction)`'s ready function, add events, like so,
 
 ```js
+Gui.event("button-1655324182259", "click", () => {
+    console.log("Button was clicked!");
+});
+```
+
+### 7) The GUI is done
+
+The final result could look like this,
+
+```js
+// ==UserScript==
+// @name        Example-GUI
+// @namespace   HKR
+// @match       https://example.com/*
+// @grant       GM.xmlHttpRequest
+// @version     1.0
+// @author      HKR
+// @description This is an example userscript made for UserGui
+// @require     https://github.com/AugmentedWeb/UserGui/raw/main/usergui.js
+// ==/UserScript==
+
+const Gui = new UserGui;
+
+Gui.settings.window.title = "GUI Demo"; // set window title
+Gui.settings.window.centered = true; // GUI starts at the center of the screen
+Gui.settings.window.external = true; // GUI opens up externally
+
+Gui.addPage(`
+<div class="rendered-form">
+    <div class="formbuilder-button form-group field-button-1655324182259">
+        <button type="button" class="btn-default btn" name="button-1655324182259" access="false" style="default" id="button-1655324182259">Button</button>
+    </div>
+</div>
+`, "Some name");
+
 Gui.open(() => {
     Gui.event("button-1655324182259", "click", () => {
         console.log("Button was clicked!");
