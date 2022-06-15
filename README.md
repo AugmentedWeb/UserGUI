@@ -4,7 +4,11 @@
 
 A Graphical user interface for userscripts. Creating user-friendly userscripts can be a bit challenging, as the majority of regular users are scared to touch your code. UserGui allows you to unlock your userscript to more people, and to create a more pleasing experience.
 
-## Features
+## Get started
+
+I'm glad you're interested in using UserGui, welcome! To get started, please take a look at the [documentation](). Have fun!
+
+## A quick overview on the features
 
 ### Internal & External GUI
 
@@ -18,12 +22,15 @@ A Graphical user interface for userscripts. Creating user-friendly userscripts c
 
 With a simple command, the user can add pages to the GUI. If multiple pages are added, a navigation bar will generated automatically.
 
-### Various other settings
+### Various other features
 
-* Open the GUI in the center of the screen
-* Dynamically size the external GUI
 * Custom CSS input to internal and external GUI separately
-* etc...
+* Really simple data functions for GUI elements
+* Open the GUI in the center of the screen
+* Notify the user if popups are blocked
+* Dynamically size the external GUI
+* Bypass site CORS
+* and so on...
 
 ## Technology
 
