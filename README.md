@@ -17,10 +17,11 @@ I'm glad you're interested in using UserGui, welcome! To get started, please tak
 | Parent    | iFrame                       | New window                   |
 | Positions | Inside document body         | Anywhere in screen           |
 | Weakness  | Can't move outside of window | Disabled popups hide the GUI |
+| Image  | ![Internal GUI](media/example_gui.png) | ![External GUI](media/external_gui.png) |
 
 ### Dynamic navbar
 
-With a simple command, the user can add pages to the GUI. If multiple pages are added, a navigation bar will generated automatically.
+If the user adds multiple pages to the GUI, a navigation bar will generated automatically.
 
 ### Various other features
 
@@ -36,11 +37,7 @@ With a simple command, the user can add pages to the GUI. If multiple pages are 
 
 ### Bootstrap 5
 
-UserGui uses the power of [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/) to make beautiful interfaces, like the one below.
-
-![Example GUI](media/example_gui.png)
-
-Bootstrap 5 is loaded using the userscript manager's `GM.xmlHttpRequest` function to bypass possible CORS-limitations.
+UserGui uses the power of [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/) to make beautiful interfaces. Bootstrap is loaded using the userscript manager's `GM.xmlHttpRequest` function. This is done in order to bypass possible CORS-limitations.
 
 ### Other
 
