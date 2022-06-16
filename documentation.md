@@ -161,7 +161,7 @@ If you answered 4, that's correct!
 ### AddPage Function
 
 ```js
-addPage(content, name)
+addPage(content, tabName)
 ```
 >
 > ### Description
