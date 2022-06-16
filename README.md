@@ -14,6 +14,7 @@ A Graphical user interface for userscripts. Creating user-friendly userscripts c
 | Positions | Inside document body         | Anywhere in screen           |
 | Weakness  | Can't move outside of window | Disabled popups hide the GUI |
 | Mobile   | Supports mobile devices, can't move window | Supports mobile devices |
+| Browsers   | Tested on Chromium & Firefox | Tested on Chromium & Firefox |
 | Image  | ![Internal GUI](media/example_gui.png) | ![External GUI](media/external_gui.png) |
 
 ### Dynamic navbar
