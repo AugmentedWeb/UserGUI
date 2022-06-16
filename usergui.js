@@ -563,6 +563,10 @@ class UserGui {
 	}
 
 	async #openInternalGui(readyFunction) {
+		if(this.iFrame) {
+			return;
+		}
+		
 		const fadeInSpeedMs = 250;
 
 		let left = 0, top = 0;
@@ -625,6 +629,7 @@ class UserGui {
 		} else {
 			if(this.iFrame) {
 				this.iFrame.remove();
+				this.iFrame = undefined;
 			}
 		}
 	}
