@@ -292,7 +292,7 @@ setSelection(name, newValue)
 >
 > **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder*
 > 
-> **@newValue (String, Integer)** *The value of the GUI form element's item to be set as checked*
+> **@newValue (String, Integer)** *The GUI form element's selection item's value, which will be checked*
 > 
 > ### Returns
 >
