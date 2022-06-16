@@ -304,40 +304,40 @@ class UserGui {
 		return { "x" : x, "y": y };
 	}
 
-	#initializeInternalGuiEvents() {
+	#initializeInternalGuiEvents(iFrame) {
 		// - The code below will consist mostly of drag and resize implementations
 		// - iFrame window <-> Main window interaction requires these to be done
 		// - Basically, iFrame document's event listeners make the whole iFrame move on the main window
 
 		// Sets the iFrame's size
 		function setFrameSize(x, y) {
-			this.iFrame.style.width = x + "px";
-			this.iFrame.style.height = y + "px";
+			iFrame.style.width = x + "px";
+			iFrame.style.height = y + "px";
 		}
 
 		// Gets the iFrame's size
 		function getFrameSize() {
-			const frameBounds = this.iFrame.getBoundingClientRect();
+			const frameBounds = iFrame.getBoundingClientRect();
 
 			return { "width" : frameBounds.width, "height" : frameBounds.height };
 		}
 
 		// Sets the iFrame's position relative to the main window's document
 		function setFramePos(x, y) {
-			this.iFrame.style.left = x + "px";
-			this.iFrame.style.top = y + "px";
+			iFrame.style.left = x + "px";
+			iFrame.style.top = y + "px";
 		}
 
 		// Gets the iFrame's position relative to the main document
 		function getFramePos() {
-			const frameBounds = this.iFrame.getBoundingClientRect();
+			const frameBounds = iFrame.getBoundingClientRect();
 			
 			return { "x": frameBounds.x, "y" : frameBounds.y };
 		}
 
 		// Sets the frame body's offsetHeight
 		function setInnerFrameSize(x, y) {
-			const innerFrameElem = this.iFrame.contentDocument.querySelector("#gui");
+			const innerFrameElem = iFrame.contentDocument.querySelector("#gui");
 
 			innerFrameElem.style.width = `${x}px`;
 			innerFrameElem.style.height = `${y}px`;
@@ -345,7 +345,7 @@ class UserGui {
 
 		// Gets the frame body's offsetHeight
 		function getInnerFrameSize() {
-			const innerFrameElem = this.iFrame.contentDocument.querySelector("#gui");
+			const innerFrameElem = iFrame.contentDocument.querySelector("#gui");
 
 			return { "x": innerFrameElem.offsetWidth, "y" : innerFrameElem.offsetHeight };
 		}
@@ -406,7 +406,7 @@ class UserGui {
 		}
 
 		function handleDrag(isInsideFrame, e) {
-			const bR = this.iFrame.getBoundingClientRect();
+			const bR = iFrame.getBoundingClientRect();
 
 			const windowWidth = window.innerWidth,
 				windowHeight = window.innerHeight;
@@ -597,7 +597,7 @@ class UserGui {
 			this.document = iframe.contentDocument;
 			this.iFrame = iframe;
 
-			this.#initializeInternalGuiEvents();
+			this.#initializeInternalGuiEvents(iframe);
 
 			readyFunction();
 		}
