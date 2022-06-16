@@ -120,9 +120,9 @@ addPage(content, name)
 >
 > ### Parameters
 >
-> **@content String** *HTML GUI content*
+> **@content (String)** *HTML GUI content*
 > 
-> **@name String** *Navbar tab title*
+> **@name (String)** *Navbar tab title*
 >
 > ### Returns
 >
