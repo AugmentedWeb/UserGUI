@@ -402,9 +402,9 @@ smartEvent(name, eventFunction)
 >
 > Creates an event listener for a GUI form element, but automatically determines the best listener type for the element. Requires the name parameter to have the type as a prefix (e.g. "button-", "select-"). An example name could be `select-1655377908386`, or `textbox-cool-text`.
 > 
-> - Button detected -> listen for "click"
+> - "Button" -> listen for "click"
 > 
-> - Textarea detected -> listen for "input"
+> - "Textarea" -> listen for "input"
 > 
 > - e.g.
 > 
