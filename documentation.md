@@ -5,7 +5,15 @@
 - [Quick Start](#quick-start)
 - [Important Parameter](#important-parameter)
 - [Public Functions](#public-functions)
+    - [General GUI Functions](#general-gui-functions)   
+    - [Event Functions](#event-functions)
+    - [Form Modification Functions](#form-modification-functions)
+    - [GUI Data Transfer Functions](#gui-data-transfer-functions)
 - [Public Variables](#public-variables)
+    - [Window](#window-object)
+    - [Document](#document-object)
+    - [iFrame](#iframe-object)
+    - [Settings](#settings-object)
 
 ## Quick Start
 
@@ -268,7 +276,7 @@ smartEvent(name, eventFunction)
 >
 > None
 
-## Form modification functions
+## Form Modification Functions
 
 ### Disable Function
 
