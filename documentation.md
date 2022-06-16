@@ -116,13 +116,13 @@ addPage(content, name)
 >
 > ### Description
 >
-> Adds a page to the GUI page array.
+> Adds a page object to the GUI page array. This function will be used by the user to add their own form content to the GUI. If they add multiple pages, a navigation bar will automatically be generated.
 >
 > ### Parameters
 >
-> **@content (String)** *HTML GUI content*
+> **@content (String)** *HTML form content taken from BeautifyTools' Form Builder*
 > 
-> **@name (String)** *Navbar tab title*
+> **@name (String)** *Navigation bar tab's title*
 >
 > ### Returns
 >
@@ -136,11 +136,11 @@ open(readyFunction)
 >
 > ### Description
 >
-> Opens the GUI, either externally or internally.
+> Opens the GUI. Done either externally via a new window, or internally via iFrame.
 >
 > ### Parameters
 >
-> **@readyFunction (Function)** *Gets called after the GUI has initialized, might contain user's event functions*
+> **@readyFunction (Function)** *Gets called after the GUI has initialized. Might contain user's event functions to functionalize the GUI.*
 >
 > ### Returns
 >
@@ -154,7 +154,7 @@ close()
 >
 > ### Description
 >
-> Closes the GUI.
+> Closes the GUI. Externally, `window.close()` is called. Internally, the whole iFrame will be removed.
 >
 > ### Parameters
 >
@@ -230,7 +230,7 @@ getValue(name)
 >
 > ### Description
 >
-> Gets a GUI form element's value. Works on types "text field", "textarea", "date field" & "number".
+> Gets a GUI form element's value. Works on types "Text Field", "Textarea", "Date Field" & "Number".
 >
 > ### Parameters
 >
