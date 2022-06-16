@@ -504,9 +504,7 @@ class UserGui {
 		this.document.querySelector("#button-close-gui").addEventListener('click', e => {
 			e.preventDefault();
 
-			if(iframe) {
-				iframe.remove();
-			}
+			this.close();
 		});
 
 		adjustFrameSize();
@@ -595,6 +593,7 @@ class UserGui {
 
 			this.window = iframe.contentWindow;
 			this.document = iframe.contentDocument;
+			this.iframe = iframe;
 
 			this.#initializeInternalGuiEvents(iframe);
 
@@ -613,8 +612,14 @@ class UserGui {
 
 	// Closes the GUI if it exists
 	close() {
-		if(this.window) {
-			this.window.close();
+		if(this.settings.window.external) {
+			if(this.window) {
+				this.window.close();
+			}
+		} else {
+			if(this.iframe) {
+				this.iframe.remove();
+			}
 		}
 	}
 
