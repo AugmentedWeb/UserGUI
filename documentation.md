@@ -463,3 +463,35 @@ setData(name, newData)
 > ### Returns
 >
 > None
+
+# Public Variables
+
+### Window
+
+```js
+window
+```
+>
+> ### Description
+>
+> Contains the window element. Use this variable to access the GUI's window. It will always be seperate from the site's window.
+
+### Document
+
+```js
+document
+```
+>
+> ### Description
+>
+> Contains the document element. Use this variable to access the GUI's document. It will always be seperate from the site's document.
+
+### iFrame
+
+```js
+iFrame
+```
+>
+> ### Description
+>
+> Contains the iFrame element. Use this variable to access the GUI's iFrame.
