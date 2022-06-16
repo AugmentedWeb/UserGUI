@@ -582,7 +582,7 @@ class UserGui {
 		const iframe = document.createElement("iframe");
 		iframe.srcdoc = await this.#createDocument();
 		iframe.style = `
-			position: absolute;
+			position: fixed;
 			top: ${top}px;
 			left: ${left}px;
 			width: ${this.settings.window.size.width};
