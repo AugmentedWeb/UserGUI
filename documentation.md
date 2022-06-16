@@ -2,6 +2,10 @@
 
 <img src="media/logo_docs.png" alt="logo" width="500"/>
 
+- [Quick Start](#quick-start)
+- [Public Functions](#public-functions)
+- [Public Variables](#public-variables)
+
 ## Quick Start
 
 ### 1) Setup the userscript header
