@@ -101,7 +101,7 @@ class UserGui {
 	};
 
 	// Notify the user that the popups are blocked, hence no GUI
-	handleBlockedPopups() {
+	#handleBlockedPopups() {
 		alert(`The GUI (graphical user interface) failed to open!\n\nPossible reason: The popups are blocked.\n\nPlease allow popups for this site. (${window.location.hostname})`);
 	}
 
@@ -551,7 +551,7 @@ class UserGui {
 		} 
 		else if(!this.window) {
 			// The browser blocked the popup, notify the user
-			this.handleBlockedPopups();
+			this.#handleBlockedPopups();
 		} else {
 			// Window was already opened, bring the window back to focus
 			this.window.focus();
