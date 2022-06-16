@@ -3,6 +3,7 @@
 <img src="media/logo_docs.png" alt="logo" width="500"/>
 
 - [Quick Start](#quick-start)
+- [Important Parameter](#important-parameter)
 - [Public Functions](#public-functions)
 - [Public Variables](#public-variables)
 
@@ -83,7 +84,7 @@ Gui.open(() => {
 
 [Learn more](#event-function)
 
-In this example, since our @name parameter "button-1655324182259" has the type prefix "button-", we can use a simplified function called `smartEvent(name, eventFunction)` to achieve the same thing.
+In this example, since our @name parameter "button-1655324182259" has the type prefix "button-", we can use a simplified function `smartEvent(name, eventFunction)` to achieve the same thing. The [BeautifyTools' Form Builder](https://beautifytools.com/html-form-builder.php) has the prefix in the name as default, please don't change it if you want to use the smartEvent function.
 
 ```js
 Gui.open(() => {
@@ -131,6 +132,27 @@ Gui.open(() => {
     });
 });
 ```
+
+# Important Parameter
+
+UserGui has one parameter that you have to know if you want to achieve greatness. That's the `name` parameter, which you see on almost every function. It allows UserGui to locate the form element of your choosing, and traverse trough its elements.
+
+### How do I get it?
+
+Using the [BeautifyTools' Form Builder](https://beautifytools.com/html-form-builder.php), click on the pencil to edit your form element. In the menu that slides down, you can find the name variable. That's what you're going to use when the function asks for a `name` parameter!
+
+![Image of the name parameter](media/name_parameter_location.png)
+
+It's also visible on your form element's HTML, like in this "Date Field" `date-1655383407790`. How many can you spot?
+
+```html
+<div class="formbuilder-date form-group field-date-1655383407790">
+    <label for="date-1655383407790" class="formbuilder-date-label">Date Field</label>
+    <input type="date" class="form-control" name="date-1655383407790" access="false" id="date-1655383407790">
+</div>
+```
+
+If you answered 4, that's correct!
 
 # Public Functions
 
