@@ -4,10 +4,6 @@
 
 A Graphical user interface for userscripts. Creating user-friendly userscripts can be a bit challenging, as the majority of regular users are scared to touch your code. UserGui allows you to unlock your userscript to more people, and to create a more pleasing experience.
 
-## Get started
-
-I'm glad you're interested in using UserGui, welcome! To get started, please take a look at the [documentation](documentation.md).
-
 ## Feature overview
 
 ### Internal & External GUI
@@ -42,3 +38,7 @@ UserGui uses the power of [Bootstrap 5](https://getbootstrap.com/docs/5.0/gettin
 ### Other
 
 UserGui doesn't need to load anything else than Bootstrap 5. Everything else functions from pure vanilla JavaScript.
+
+## Get started
+
+I'm glad you're interested in using UserGui, welcome! To get started, please take a look at the [documentation](documentation.md).
