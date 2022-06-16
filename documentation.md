@@ -42,7 +42,7 @@ Use [BeautifyTools' Form Builder](https://beautifytools.com/html-form-builder.ph
 
 > **NOTE: Other form builders are not supported, please only use the BeautifyTool's form builder.**
 
-Insert the form's HTML string, **as a whole**, into the `Gui.addPage(html, tabName)` function's @html parameter, like so.
+Insert the form's HTML string, **as a whole**, into the `Gui.addPage(htmlString, tabName)` function's @htmlString parameter, like so.
 
 ```js
 Gui.addPage(`
@@ -161,7 +161,7 @@ If you answered 4, that's correct!
 ### AddPage Function
 
 ```js
-addPage(content, tabName)
+addPage(htmlString, tabName)
 ```
 >
 > ### Description
@@ -170,9 +170,9 @@ addPage(content, tabName)
 >
 > ### Parameters
 >
-> **@content (String)** *HTML form content taken from BeautifyTools' Form Builder*
+> **@htmlString (String)** *HTML form content taken from BeautifyTools' Form Builder*
 > 
-> **@name (String)** *Navigation bar tab's title*
+> **@tabName (String)** *Navigation bar tab's title*
 >
 > ### Returns
 >
