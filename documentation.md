@@ -135,6 +135,8 @@ Gui.open(() => {
 });
 ```
 
+[More userscript examples](examples)
+
 # Important Parameter
 
 UserGui has one parameter that you have to know if you want to achieve greatness. That's the `name` parameter which you see on almost every function. It allows UserGui to locate the form element of your choosing, and traverse trough its elements.
