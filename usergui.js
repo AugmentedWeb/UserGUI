@@ -627,19 +627,19 @@ class UserGui {
 
 	// Creates an event listener a GUI element
 	event(name, event, eventFunction) {
-		Gui.document.querySelector(`.field-${name}`).addEventListener(event, eventFunction);
+		this.document.querySelector(`.field-${name}`).addEventListener(event, eventFunction);
 	}
 
 	// Disables a GUI element
 	disable(name) {
-		[...Gui.document.querySelector(`.field-${name}`).children].forEach(childElem => {
+		[...this.document.querySelector(`.field-${name}`).children].forEach(childElem => {
 			childElem.setAttribute("disabled", "true");
 		});
 	}
 
 	// Enables a GUI element
 	enable(name) {
-		[...Gui.document.querySelector(`.field-${name}`).children].forEach(childElem => {
+		[...this.document.querySelector(`.field-${name}`).children].forEach(childElem => {
 			if(childElem.getAttribute("disabled")) {
 				childElem.removeAttribute("disabled");
 			}
