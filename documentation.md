@@ -137,11 +137,11 @@ Gui.open(() => {
 
 # Important Parameter
 
-UserGui has one parameter that you have to know if you want to achieve greatness. That's the `name` parameter, which you see on almost every function. It allows UserGui to locate the form element of your choosing, and traverse trough its elements.
+UserGui has one parameter that you have to know if you want to achieve greatness. That's the `name` parameter which you see on almost every function. It allows UserGui to locate the form element of your choosing, and traverse trough its elements.
 
 ### How do I get it?
 
-Using the [BeautifyTools' Form Builder](https://beautifytools.com/html-form-builder.php), click on the pencil to edit your form element. In the menu that slides down, you can find the name variable. That's what you're going to use when the function asks for a `name` parameter!
+Using the [BeautifyTools' Form Builder](https://beautifytools.com/html-form-builder.php), hover over your form element, and click on the pencil to edit the element. T menu that slides down has the name variable. That's what you're going to use when the function asks for a `name` parameter!
 
 ![Image of the name parameter](media/name_parameter_location.png)
 
