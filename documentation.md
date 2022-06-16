@@ -15,7 +15,7 @@ Grant the userscript `GM.xmlHttpRequest` and require the UserGui, like so.
 
 ```js
 // @grant       GM.xmlHttpRequest
-// @require     https://github.com/AugmentedWeb/UserGui/raw/main/usergui.js
+// @require     https://raw.githubusercontent.com/AugmentedWeb/UserGui/main/usergui.js
 ```
 
 ### 2) Create a new instance
