@@ -466,7 +466,7 @@ setData(name, newData)
 
 # Public Variables
 
-### Window
+### Window Object
 
 ```js
 const Gui = new UserGui;
@@ -477,7 +477,7 @@ Gui.window
 >
 > Contains the window element. Use this variable to access the GUI's window. It will always be seperate from the site's window.
 
-### Document
+### Document Object
 
 ```js
 const Gui = new UserGui;
@@ -488,7 +488,7 @@ Gui.document
 >
 > Contains the document element. Use this variable to access the GUI's document. It will always be seperate from the site's document.
 
-### iFrame
+### iFrame Object
 
 ```js
 const Gui = new UserGui;
@@ -498,3 +498,44 @@ Gui.iFrame
 > ### Description
 >
 > Contains the iFrame element. Use this variable to access the GUI's iFrame.
+
+### Settings Object
+
+```js
+[...]
+
+{
+    "window" : {
+        "title" : "No title set",
+        "name" : "userscript-gui",
+        "external" : false,
+        "centered" : false,
+        "size" : {
+            "width" : 300,
+            "height" : 500,
+            "dynamicSize" : true
+        }
+    },
+    "gui" : {
+        "internal" : {
+            "darkCloseButton" : false,
+            "style" : `[...]`
+        },
+        "external" : {
+            "style" : `[...]`
+        }
+    },
+    "messages" : {
+        "blockedPopups" : () => alert(`[...]`)
+    }
+};
+
+[...]
+
+const Gui = new UserGui;
+Gui.settings
+```
+>
+> ### Description
+>
+> Contains the settings for the GUI window and the GUI itself.
