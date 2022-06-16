@@ -13,6 +13,7 @@ A Graphical user interface for userscripts. Creating user-friendly userscripts c
 | Parent    | iFrame                       | New window                   |
 | Positions | Inside document body         | Anywhere in screen           |
 | Weakness  | Can't move outside of window | Disabled popups hide the GUI |
+| Mobile   | Supports mobile devices, can't move window | Supports mobile devices |
 | Image  | ![Internal GUI](media/example_gui.png) | ![External GUI](media/external_gui.png) |
 
 ### Dynamic navbar
