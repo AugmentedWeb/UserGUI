@@ -26,7 +26,7 @@ const Gui = new UserGui;
 
 ### 3) Apply settings
 
-`Gui.settings` has configuration options for the GUI and its window, such as
+`Gui.settings` has configuration options for the GUI and its window, such as.
 
 ```js
 Gui.settings.window.title = "GUI Demo"; // set window title
