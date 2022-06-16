@@ -168,7 +168,7 @@ addPage(htmlString, tabName)
 >
 > ### Description
 >
-> Adds a page object to the GUI page array. This function will be used by the user to add their own form content to the GUI. If they add multiple pages, a navigation bar will automatically be generated.
+> Adds a page object to the GUI page array. This function is used to add form content to the GUI. If multiple pages are added, a navigation bar will automatically be generated.
 >
 > ### Parameters
 >
