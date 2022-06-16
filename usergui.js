@@ -19,6 +19,7 @@ class UserGui {
 	#projectName = "UserGui";
 	window = undefined;
 	document = undefined;
+	iFrame = undefined;
 	settings = {
 		"window" : {
 			"title" : "No title set",
@@ -305,40 +306,40 @@ class UserGui {
 		return { "x" : x, "y": y };
 	}
 
-	#initializeInternalGuiEvents(iframe) {
+	#initializeInternalGuiEvents() {
 		// - The code below will consist mostly of drag and resize implementations
 		// - iFrame window <-> Main window interaction requires these to be done
 		// - Basically, iFrame document's event listeners make the whole iFrame move on the main window
 
 		// Sets the iFrame's size
 		function setFrameSize(x, y) {
-			iframe.style.width = x + "px";
-			iframe.style.height = y + "px";
+			this.iFrame.style.width = x + "px";
+			this.iFrame.style.height = y + "px";
 		}
 
 		// Gets the iFrame's size
 		function getFrameSize() {
-			const frameBounds = iframe.getBoundingClientRect();
+			const frameBounds = this.iFrame.getBoundingClientRect();
 
 			return { "width" : frameBounds.width, "height" : frameBounds.height };
 		}
 
 		// Sets the iFrame's position relative to the main window's document
 		function setFramePos(x, y) {
-			iframe.style.left = x + "px";
-			iframe.style.top = y + "px";
+			this.iFrame.style.left = x + "px";
+			this.iFrame.style.top = y + "px";
 		}
 
 		// Gets the iFrame's position relative to the main document
 		function getFramePos() {
-			const frameBounds = iframe.getBoundingClientRect();
+			const frameBounds = this.iFrame.getBoundingClientRect();
 			
 			return { "x": frameBounds.x, "y" : frameBounds.y };
 		}
 
 		// Sets the frame body's offsetHeight
 		function setInnerFrameSize(x, y) {
-			const innerFrameElem = iframe.contentDocument.querySelector("#gui");
+			const innerFrameElem = this.iFrame.contentDocument.querySelector("#gui");
 
 			innerFrameElem.style.width = `${x}px`;
 			innerFrameElem.style.height = `${y}px`;
@@ -346,7 +347,7 @@ class UserGui {
 
 		// Gets the frame body's offsetHeight
 		function getInnerFrameSize() {
-			const innerFrameElem = iframe.contentDocument.querySelector("#gui");
+			const innerFrameElem = this.iFrame.contentDocument.querySelector("#gui");
 
 			return { "x": innerFrameElem.offsetWidth, "y" : innerFrameElem.offsetHeight };
 		}
@@ -407,7 +408,7 @@ class UserGui {
 		}
 
 		function handleDrag(isInsideFrame, e) {
-			const bR = iframe.getBoundingClientRect();
+			const bR = this.iFrame.getBoundingClientRect();
 
 			const windowWidth = window.innerWidth,
 				windowHeight = window.innerHeight;
@@ -593,9 +594,9 @@ class UserGui {
 
 			this.window = iframe.contentWindow;
 			this.document = iframe.contentDocument;
-			this.iframe = iframe;
+			this.iFrame = iframe;
 
-			this.#initializeInternalGuiEvents(iframe);
+			this.#initializeInternalGuiEvents();
 
 			readyFunction();
 		}
@@ -617,8 +618,8 @@ class UserGui {
 				this.window.close();
 			}
 		} else {
-			if(this.iframe) {
-				this.iframe.remove();
+			if(this.iFrame) {
+				this.iFrame.remove();
 			}
 		}
 	}
