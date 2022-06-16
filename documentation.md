@@ -268,7 +268,7 @@ getSelection(name)
 >
 > ### Description
 >
-> Gets a GUI form element's selected item's value. Works on type "Radio Group".
+> Gets a GUI form element's selected option's value. Works on type "Radio Group".
 >
 > ### Parameters
 >
@@ -276,23 +276,117 @@ getSelection(name)
 > 
 > ### Returns
 >
-> **(String, Integer)** *The GUI form element's selected item's value*
+> **(String, Integer)** *The GUI form element's selected option's value*
 
 ### SetSelection Function
 
 ```js
-setSelection(name, newValue) 
+setSelection(name, newOptionsValue) 
 ```
 >
 > ### Description
 >
-> Selects a GUI form element's item. Works on type "Radio Group".
+> Selects a GUI form element's option. Works on type "Radio Group".
 >
 > ### Parameters
 >
 > **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder*
 > 
-> **@newValue (String, Integer)** *The GUI form element's selection item's value, which will be checked*
+> **@newOptionsValue (String, Integer)** *The GUI form element's option's value, which will be checked*
+> 
+> ### Returns
+>
+> None
+
+### GetChecked Function
+
+```js
+getChecked(name)
+```
+>
+> ### Description
+>
+> Gets a GUI form element's all checked options' values. Works on type "Checkbox Group".
+>
+> ### Parameters
+>
+> **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder*
+> 
+> ### Returns
+>
+> **(Array)** *Array of a GUI form element's checked options' values*
+
+### SetChecked Function
+
+```js
+setChecked(name, checkedArr)
+```
+>
+> ### Description
+>
+> Sets a GUI form element's checked options. Works on type "Checkbox Group".
+>
+> ### Parameters
+>
+> **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder*
+>
+> **@checkedArr (Array)** *String array of the value's to be checked*
+> 
+> ### Returns
+>
+> None
+
+### GetFiles Function
+
+```js
+getFiles(name)
+```
+>
+> ### Description
+>
+> Gets a GUI form element's files. Works on type "File Upload".
+>
+> ### Parameters
+>
+> **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder*
+> 
+> ### Returns
+>
+> **(Object)** *Object containing the files and additional information (`FileList {0: File, length: 1}` e.g)*
+
+### GetOption Function
+
+```js
+getOption(name) 
+```
+>
+> ### Description
+>
+> Gets a GUI form element's selected option's value. Works on type "Select".
+>
+> ### Parameters
+>
+> **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder*
+> 
+> ### Returns
+>
+> **(String, Integer)** *The GUI form element's selected option's value*
+
+### SetOption Function
+
+```js
+setOption(name, newOptionsValue)
+```
+>
+> ### Description
+>
+> Sets a GUI form element's selected option. Works on type "Select".
+>
+> ### Parameters
+>
+> **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder*
+>
+> **@newOptionsValue (String, Integer)** *The GUI form element's option's value to be selected*
 > 
 > ### Returns
 >
