@@ -21,7 +21,7 @@ I'm glad you're interested in using UserGui, welcome! To get started, please tak
 
 ### Dynamic navbar
 
-If the user adds multiple pages to the GUI, a navigation bar will generated automatically.
+If the developer adds multiple pages to the GUI, a navigation bar will generated automatically.
 
 ### Various other features
 
