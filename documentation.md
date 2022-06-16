@@ -34,7 +34,7 @@ Gui.settings.window.centered = true; // GUI starts at the center of the screen
 Gui.settings.gui.internal.darkCloseButton = true; // Changes the close button to dark theme
 ```
 
-[Learn more](#settings-object)
+[Learn more about the settings](#settings-object)
 
 ### 4) Add a page
 
@@ -54,7 +54,7 @@ Gui.addPage(`
 `, "Some tab name");
 ```
 
-[Learn more](#addpage-function)
+[Learn more about addPage function](#addpage-function)
 
 ### 5) Open the GUI
 
@@ -66,7 +66,7 @@ Gui.open(() => {
 });
 ```
 
-[Learn more](#open-function)
+[Learn more about open function](#open-function)
 
 ### 6) Functionalize the GUI
 
@@ -82,9 +82,11 @@ Gui.open(() => {
 });
 ```
 
-[Learn more](#event-function)
+[Learn more about event function](#event-function)
 
 In this example, since our @name parameter "button-1655324182259" has the type prefix "button-", we can use a simplified function `smartEvent(name, eventFunction)` to achieve the same thing. The [BeautifyTools' Form Builder](https://beautifytools.com/html-form-builder.php) has the prefix in the name as default, please don't change it if you want to use the smartEvent function.
+
+[Learn more about the name parameter](#important-parameter)
 
 ```js
 Gui.open(() => {
@@ -94,7 +96,7 @@ Gui.open(() => {
 });
 ```
 
-[Learn more](#smartevent-function)
+[Learn more about smartEvent function](#smartevent-function)
 
 ### 7) The GUI is done
 
