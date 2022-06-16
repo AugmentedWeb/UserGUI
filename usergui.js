@@ -70,6 +70,7 @@ class UserGui {
 			
 					.left-title {
 						font-size: 14px;
+						font-weight: bold;
 						padding: 0;
 						margin: 0;
 					}
