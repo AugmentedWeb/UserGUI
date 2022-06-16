@@ -226,7 +226,7 @@ event(name, event, eventFunction)
 >
 > ### Parameters
 >
-> **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder*
+> **@name (String)** *[Form element's name, taken from BeautifyTools' Form Builder](#important-parameter)*
 > 
 > **@event (String)** *Event to listen for (e.g. click, change)*
 > 
@@ -248,7 +248,7 @@ disable(name)
 >
 > ### Parameters
 >
-> **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder*
+> **@name (String)** *[Form element's name, taken from BeautifyTools' Form Builder](#important-parameter)*
 > 
 > ### Returns
 >
@@ -266,7 +266,7 @@ enable(name)
 >
 > ### Parameters
 >
-> **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder*
+> **@name (String)** *[Form element's name, taken from BeautifyTools' Form Builder](#important-parameter)*
 > 
 > ### Returns
 >
@@ -284,7 +284,7 @@ getValue(name)
 >
 > ### Parameters
 >
-> **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder*
+> **@name (String)** *[Form element's name, taken from BeautifyTools' Form Builder](#important-parameter)*
 > 
 > ### Returns
 >
@@ -302,7 +302,7 @@ setValue(name, newValue)
 >
 > ### Parameters
 >
-> **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder*
+> **@name (String)** *[Form element's name, taken from BeautifyTools' Form Builder](#important-parameter)*
 > 
 > **@newValue (String, Integer)** *The new GUI form element's value to be set*
 > 
@@ -322,7 +322,7 @@ getSelection(name)
 >
 > ### Parameters
 >
-> **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder*
+> **@name (String)** *[Form element's name, taken from BeautifyTools' Form Builder](#important-parameter)*
 > 
 > ### Returns
 >
@@ -340,7 +340,7 @@ setSelection(name, newOptionsValue)
 >
 > ### Parameters
 >
-> **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder*
+> **@name (String)** *[Form element's name, taken from BeautifyTools' Form Builder](#important-parameter)*
 > 
 > **@newOptionsValue (String, Integer)** *The GUI form element's option's value, which will be checked*
 > 
@@ -360,7 +360,7 @@ getChecked(name)
 >
 > ### Parameters
 >
-> **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder*
+> **@name (String)** *[Form element's name, taken from BeautifyTools' Form Builder](#important-parameter)*
 > 
 > ### Returns
 >
@@ -378,7 +378,7 @@ setChecked(name, checkedArr)
 >
 > ### Parameters
 >
-> **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder*
+> **@name (String)** *[Form element's name, taken from BeautifyTools' Form Builder](#important-parameter)*
 >
 > **@checkedArr (Array)** *String array of the value's to be checked*
 > 
@@ -398,7 +398,7 @@ getFiles(name)
 >
 > ### Parameters
 >
-> **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder*
+> **@name (String)** *[Form element's name, taken from BeautifyTools' Form Builder](#important-parameter)*
 > 
 > ### Returns
 >
@@ -416,7 +416,7 @@ getOption(name)
 >
 > ### Parameters
 >
-> **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder*
+> **@name (String)** *[Form element's name, taken from BeautifyTools' Form Builder](#important-parameter)*
 > 
 > ### Returns
 >
@@ -434,7 +434,7 @@ setOption(name, newOptionsValue)
 >
 > ### Parameters
 >
-> **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder*
+> **@name (String)** *[Form element's name, taken from BeautifyTools' Form Builder](#important-parameter)*
 >
 > **@newOptionsValue (String, Integer)** *The GUI form element's option's value to be selected*
 > 
@@ -460,7 +460,7 @@ smartEvent(name, eventFunction)
 > 
 > ### Parameters
 >
-> **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder. Has to have the type prefix (e.g. "button-", "select-")*
+> **@name (String)** *[Form element's name, taken from BeautifyTools' Form Builder](#important-parameter). Has to have the type prefix (e.g. "button-", "select-")*
 >
 > **@eventFunction (Function)** *Function to be called when event is activated*
 > 
@@ -484,7 +484,7 @@ getData(name)
 > 
 > ### Parameters
 >
-> **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder. Has to have the type prefix (e.g. "button-", "select-")*
+> **@name (String)** *[Form element's name, taken from BeautifyTools' Form Builder](#important-parameter). Has to have the type prefix (e.g. "button-", "select-")*
 > 
 > ### Returns
 >
@@ -506,7 +506,7 @@ setData(name, newData)
 > 
 > ### Parameters
 >
-> **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder. Has to have the type prefix (e.g. "button-", "select-")*
+> **@name (String)** *[Form element's name, taken from BeautifyTools' Form Builder](#important-parameter). Has to have the type prefix (e.g. "button-", "select-")*
 >
 > **@newData (String, Integer, Array)** *The GUI form element's new data (e.g. new values, new selected options)*
 > 
