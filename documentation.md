@@ -430,8 +430,6 @@ getData(name)
 >
 > - "Checkbox Group" -> use `getChecked(name)`
 > 
-> - "File Select" -> use `getFiles(name)`
-> 
 > - e.g.
 > 
 > ### Parameters
@@ -453,8 +451,6 @@ setData(name, newData)
 > Automatically determines the suitable "*set*" function for a GUI form element. Requires the name parameter to have the type as a prefix (e.g. "button-", "select-"). An example name could be `select-1655377908386`, or `textbox-cool-text`.
 >
 > - "Checkbox Group" -> use `setChecked(name)`
-> 
-> - "File Select" -> use `setFiles(name)`
 > 
 > - e.g.
 > 
