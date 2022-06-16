@@ -17,6 +17,12 @@ A Graphical user interface for userscripts. Creating user-friendly userscripts c
 | Browsers   | Tested on Chromium & Firefox | Tested on Chromium & Firefox |
 | Image  | ![Internal GUI](media/example_gui.png) | ![External GUI](media/external_gui.png) |
 
+### Easy to design
+
+UserGui is built around [BeautifyTools' Form Builder](https://beautifytools.com/html-form-builder.php). It eases the design process of your GUI's form so that you don't have to remember a million different commands and element names.
+
+After designing the form, it can be exported as a HTML string. With one UserGui command it can be added to the GUI. The design process is increadibly easy and fast to do. You'll love it once you'll get used to it.
+
 ### Dynamic navbar
 
 If the developer adds multiple pages to the GUI, a navigation bar will generated automatically.
