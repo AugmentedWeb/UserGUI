@@ -35,7 +35,7 @@ Use [BeautifyTools' Form Builder](https://beautifytools.com/html-form-builder.ph
 
 > **NOTE: Other form builders are not supported, please only use the BeautifyTool's form builder.**
 
-The form's HTML will be inserted, **as a whole**, into the `Gui.addPage(html, name)` function, like so
+Insert the form's HTML string, **as a whole**, into the `Gui.addPage(html, name)` function's @html parameter, like so
 
 ```js
 Gui.addPage(`
@@ -44,7 +44,7 @@ Gui.addPage(`
         <button type="button" class="btn-default btn" name="button-1655324182259" access="false" style="default" id="button-1655324182259">Button</button>
     </div>
 </div>
-`, "Some name");
+`, "Some tab name");
 ```
 
 ### 5) Open the GUI
@@ -97,7 +97,7 @@ Gui.addPage(`
         <button type="button" class="btn-default btn" name="button-1655324182259" access="false" style="default" id="button-1655324182259">Button</button>
     </div>
 </div>
-`, "Some name");
+`, "Some tab name");
 
 Gui.open(() => {
     Gui.event("button-1655324182259", "click", () => {
