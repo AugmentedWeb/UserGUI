@@ -160,6 +160,8 @@ If you answered 4, that's correct!
 
 # Public Functions
 
+## General GUI Functions
+
 ### AddPage Function
 
 ```js
@@ -216,6 +218,8 @@ close()
 >
 > None
 
+## Event Functions
+
 ### Event Function
 
 ```js
@@ -237,6 +241,34 @@ event(name, event, eventFunction)
 > ### Returns
 >
 > None
+
+### SmartEvent Function
+
+```js
+smartEvent(name, eventFunction)
+```
+>
+> ### Description
+>
+> Creates an event listener for a GUI form element, but automatically determines the best listener type for the element. Requires the name parameter to have the type as a prefix (e.g. "button-", "select-"). An example name could be `select-1655377908386`, or `textbox-cool-text`.
+> 
+> - "Button" -> listen for "click"
+> 
+> - "Textarea" -> listen for "input"
+> 
+> - e.g.
+> 
+> ### Parameters
+>
+> **@name (String)** *[Form element's name, taken from BeautifyTools' Form Builder](#important-parameter). Has to have the type prefix (e.g. "button-", "select-")*
+>
+> **@eventFunction (Function)** *Function to be called when event is activated*
+> 
+> ### Returns
+>
+> None
+
+## Form modification functions
 
 ### Disable Function
 
@@ -273,6 +305,8 @@ enable(name)
 > ### Returns
 >
 > None
+
+## GUI Data Transfer Functions
 
 ### GetValue Function
 
@@ -439,32 +473,6 @@ setOption(name, newOptionsValue)
 > **@name (String)** *[Form element's name, taken from BeautifyTools' Form Builder](#important-parameter)*
 >
 > **@newOptionsValue (String, Integer)** *The GUI form element's option's value to be selected*
-> 
-> ### Returns
->
-> None
-
-### SmartEvent Function
-
-```js
-smartEvent(name, eventFunction)
-```
->
-> ### Description
->
-> Creates an event listener for a GUI form element, but automatically determines the best listener type for the element. Requires the name parameter to have the type as a prefix (e.g. "button-", "select-"). An example name could be `select-1655377908386`, or `textbox-cool-text`.
-> 
-> - "Button" -> listen for "click"
-> 
-> - "Textarea" -> listen for "input"
-> 
-> - e.g.
-> 
-> ### Parameters
->
-> **@name (String)** *[Form element's name, taken from BeautifyTools' Form Builder](#important-parameter). Has to have the type prefix (e.g. "button-", "select-")*
->
-> **@eventFunction (Function)** *Function to be called when event is activated*
 > 
 > ### Returns
 >
