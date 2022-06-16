@@ -31,7 +31,7 @@ If you add multiple pages to the GUI, navigation tabs will generated automatical
 
 The GUI is partly isolated from the site's environment. Both internal and external GUI live in its own document. This means that the site's functions and CSS styles won't interfere with the GUI that easily. 
 
-The isolated environment and the option to use either an internal or externnal GUI help keep the GUI working in almost any situation.
+The isolated environment and the option to use either an internal or external GUI help keep the GUI working in almost any situation.
 
 ### Various other features
 
