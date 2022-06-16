@@ -25,7 +25,7 @@ After designing the form, it can be exported as a HTML string. With one UserGui 
 
 ### Dynamic Navigation Tabs
 
-If the developer adds multiple pages to the GUI, navigation tabs will generated automatically.
+If you add multiple pages to the GUI, navigation tabs will generated automatically.
 
 ### Isolated Environment
 
