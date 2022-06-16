@@ -106,7 +106,7 @@ Gui.open(() => {
 });
 ```
 
----
+# Public Functions
 
 ### AddPage Function
 
@@ -172,7 +172,7 @@ event(name, event, eventFunction)
 >
 > ### Description
 >
-> Creates an event listener for the element.
+> Creates an event listener for a GUI form element.
 >
 > ### Parameters
 >
@@ -181,6 +181,81 @@ event(name, event, eventFunction)
 > **@event (String)** *Event to listen for (click, change, e.g.)*
 > 
 > **@eventFunction (Function)** *Function to be called when event is activated*
+> 
 > ### Returns
 >
 > None
+
+### Disable Function
+
+```js
+disable(name)
+```
+>
+> ### Description
+>
+> Disables a GUI form element.
+>
+> ### Parameters
+>
+> **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder*
+> 
+> ### Returns
+>
+> None
+
+### Enable Function
+
+```js
+enable(name)
+```
+>
+> ### Description
+>
+> Enables a GUI form element.
+>
+> ### Parameters
+>
+> **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder*
+> 
+> ### Returns
+>
+> None
+
+### GetValue Function
+
+```js
+getValue(name)
+```
+>
+> ### Description
+>
+> Gets a GUI form element's value. Works on types "text field", "textarea", "date field" & "number".
+>
+> ### Parameters
+>
+> **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder*
+> 
+> ### Returns
+>
+> **(String, Integer)** *The GUI form element's value*
+
+### SetValue Function
+
+```js
+setValue(name, newValue)
+```
+>
+> ### Description
+>
+> Sets a GUI form element's value. Works on types "text field", "textarea", "date field" & "number".
+>
+> ### Parameters
+>
+> **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder*
+> 
+> **@newValue (String, Integer)** *The new GUI form element's value to be set*
+> 
+> ### Returns
+>
+> **(String, Integer)** *The GUI form element's value*
