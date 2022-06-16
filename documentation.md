@@ -29,6 +29,8 @@ Gui.settings.window.centered = true; // GUI starts at the center of the screen
 Gui.settings.gui.internal.darkCloseButton = true; // Changes the close button to dark theme
 ```
 
+[Learn more](#settings-object)
+
 ### 4) Add a page
 
 Use [BeautifyTools' Form Builder](https://beautifytools.com/html-form-builder.php) to create your GUI elements. After designing the form, press the "Get HTML" button. 
@@ -47,6 +49,8 @@ Gui.addPage(`
 `, "Some tab name");
 ```
 
+[Learn more](#addpage-function)
+
 ### 5) Open the GUI
 
 Use `Gui.open(readyFunction)` to open the GUI.
@@ -57,6 +61,8 @@ Gui.open(() => {
 });
 ```
 
+[Learn more](#open-function)
+
 ### 6) Functionalize the GUI
 
 Currently, your GUI is a dead shell. We need to add event listeners to make it alive.
@@ -64,10 +70,26 @@ Currently, your GUI is a dead shell. We need to add event listeners to make it a
 Inside the `Gui.open(readyFunction)`'s ready function, add events, like so,
 
 ```js
-Gui.event("button-1655324182259", "click", () => {
-    console.log("Button was clicked!");
+Gui.open(() => {
+    Gui.event("button-1655324182259", "click", () => {
+        console.log("Button was clicked!");
+    });
 });
 ```
+
+[Learn more](#event-function)
+
+In this example, since our @name parameter "button-1655324182259" has the type prefix "button-", we can use a simplified function called `smartEvent(name, eventFunction)` to achieve the same thing.
+
+```js
+Gui.open(() => {
+    Gui.smartEvent("button-1655324182259", () => {
+        console.log("Button was clicked!");
+    });
+});
+```
+
+[Learn more](#smartevent-function)
 
 ### 7) The GUI is done
 
@@ -100,7 +122,7 @@ Gui.addPage(`
 `, "Some tab name");
 
 Gui.open(() => {
-    Gui.event("button-1655324182259", "click", () => {
+    Gui.smartEvent("button-1655324182259", () => {
         console.log("Button was clicked!");
     });
 });
