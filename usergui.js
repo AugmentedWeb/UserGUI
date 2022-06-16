@@ -74,7 +74,7 @@ class UserGui {
 						margin: 0;
 					}
 					
-					.right-buttons {
+					#button-close-gui {
 						vertical-align: middle;
 					}
 
@@ -566,7 +566,7 @@ class UserGui {
 		if(this.iFrame) {
 			return;
 		}
-		
+
 		const fadeInSpeedMs = 250;
 
 		let left = 0, top = 0;
