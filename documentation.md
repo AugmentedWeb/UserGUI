@@ -108,7 +108,7 @@ Gui.open(() => {
 
 ---
 
-## AddPage Function
+### AddPage Function
 
 ```js
 addPage(content, name)
@@ -116,7 +116,7 @@ addPage(content, name)
 >
 > ### Description
 >
-> Pushes an object containing the content and the name to the `#guiPages` variable. This adds a page to the GUI.
+> Adds a page to the GUI page array.
 >
 > ### Parameters
 >
@@ -128,3 +128,59 @@ addPage(content, name)
 >
 > None
 
+### Open Function
+
+```js
+open(readyFunction)
+```
+>
+> ### Description
+>
+> Opens the GUI, either externally or internally.
+>
+> ### Parameters
+>
+> **@readyFunction (Function)** *Gets called after the GUI has initialized, might contain user's event functions*
+>
+> ### Returns
+>
+> None
+
+### Close Function
+
+```js
+close()
+```
+>
+> ### Description
+>
+> Closes the GUI.
+>
+> ### Parameters
+>
+> None
+>
+> ### Returns
+>
+> None
+
+### Event Function
+
+```js
+event(name, event, eventFunction)
+```
+>
+> ### Description
+>
+> Creates an event listener for the element.
+>
+> ### Parameters
+>
+> **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder*
+> 
+> **@event (String)** *Event to listen for (click, change, e.g.)*
+> 
+> **@eventFunction (Function)** *Function to be called when event is activated*
+> ### Returns
+>
+> None
