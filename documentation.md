@@ -469,7 +469,8 @@ setData(name, newData)
 ### Window
 
 ```js
-window
+const Gui = new UserGui;
+Gui.window
 ```
 >
 > ### Description
@@ -479,7 +480,8 @@ window
 ### Document
 
 ```js
-document
+const Gui = new UserGui;
+Gui.document
 ```
 >
 > ### Description
@@ -489,7 +491,8 @@ document
 ### iFrame
 
 ```js
-iFrame
+const Gui = new UserGui;
+Gui.iFrame
 ```
 >
 > ### Description
