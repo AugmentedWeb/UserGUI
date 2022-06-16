@@ -42,7 +42,7 @@ Use [BeautifyTools' Form Builder](https://beautifytools.com/html-form-builder.ph
 
 > **NOTE: Other form builders are not supported, please only use the BeautifyTool's form builder.**
 
-Insert the form's HTML string, **as a whole**, into the `Gui.addPage(html, name)` function's @html parameter, like so
+Insert the form's HTML string, **as a whole**, into the `Gui.addPage(html, tabName)` function's @html parameter, like so.
 
 ```js
 Gui.addPage(`
