@@ -33,7 +33,7 @@ Gui.settings.gui.internal.darkCloseButton = true; // Changes the close button to
 
 Use [BeautifyTools' Form Builder](https://beautifytools.com/html-form-builder.php) to create your GUI elements. After creating the form, press the "Get HTML" button. 
 
-> **NOTE: Other form builders are not supported, please use the BeautifyTool's form builder.**
+> **NOTE: Other form builders are not supported, please only use the BeautifyTool's form builder.**
 
 The form's HTML will be inserted, **as a whole**, into the `Gui.addPage(html, name)` function, like so
 
