@@ -592,6 +592,7 @@ class UserGui {
 			transition: all ${500/1000}s;
 			border-radius: 5px;
 			box-shadow: rgb(0 0 0 / 6%) 10px 10px 10px;
+			z-index: 2147483647;
 		`;
 
 		// Prepend the GUI to the document's body
