@@ -25,8 +25,8 @@ If the developer adds multiple pages to the GUI, a navigation bar will generated
 
 ### Various other features
 
-* Custom CSS input to internal and external GUI separately
 * Really simple data functions for GUI element data transfer
+* Custom CSS input to internal and external GUI separately
 * Open the GUI in the center of the screen
 * Notify the user if popups are blocked
 * Dynamically size the external GUI
