@@ -106,15 +106,25 @@ Gui.open(() => {
 });
 ```
 
-## Public
+---
 
-### Variables
+## AddPage Function
 
+```js
+addPage(content, name)
+```
+>
+> ### Description
+>
+> Pushes an object containing the content and the name to the `#guiPages` variable. This adds a page to the GUI.
+>
+> ### Parameters
+>
+> **@content String** *HTML GUI content*
+> 
+> **@name String** *Navbar tab title*
+>
+> ### Returns
+>
+> None
 
-
-### Functions
-
-| Function                 | Description                                                                      | Parameters                                                                                    | Returns |
-|--------------------------|----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|---------|
-| `handleBlockedPopups()`  | Creates an alert message telling the user their popups are blocked.              | None                                                                                          | None    |
-| `addPage(content, name)` | Pushes an object containing the content and the name to the `#guiPages` variable | `content: HTML string given by the user`<br>`name: String to be used as the navbar tab title` | None    |
