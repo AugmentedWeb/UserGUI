@@ -73,6 +73,10 @@ class UserGui {
 						padding: 0;
 						margin: 0;
 					}
+					
+					.right-buttons {
+						vertical-align: middle;
+					}
 
 					div .form-group {
 						margin-bottom: 15px;
