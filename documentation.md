@@ -547,7 +547,7 @@ Gui.iFrame
 >
 > ### Description
 >
-> Contains the iFrame element. Use this variable to access the GUI's iFrame.
+> Contains the iFrame element. If the GUI is internal, use this variable to access the GUI's iFrame.
 
 ### Settings Object
 
