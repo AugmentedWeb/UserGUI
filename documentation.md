@@ -72,7 +72,7 @@ Gui.open(() => {
 
 Currently, your GUI is a dead shell. We need to add event listeners to make it alive.
 
-Inside the `Gui.open(readyFunction)`'s ready function, add events, like so,
+Inside the `Gui.open(readyFunction)`'s ready function, add events using `event(name, event, eventFunction)`, like so.
 
 ```js
 Gui.open(() => {
