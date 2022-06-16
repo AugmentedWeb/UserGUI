@@ -178,7 +178,7 @@ event(name, event, eventFunction)
 >
 > **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder*
 > 
-> **@event (String)** *Event to listen for (click, change, e.g.)*
+> **@event (String)** *Event to listen for (e.g. click, change)*
 > 
 > **@eventFunction (Function)** *Function to be called when event is activated*
 > 
@@ -352,7 +352,7 @@ getFiles(name)
 > 
 > ### Returns
 >
-> **(Object)** *Object containing the files and additional information (`FileList {0: File, length: 1}` e.g)*
+> **(Object)** *Object containing the files and additional information (e.g `FileList {0: File, length: 1}`)*
 
 ### GetOption Function
 
@@ -387,6 +387,82 @@ setOption(name, newOptionsValue)
 > **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder*
 >
 > **@newOptionsValue (String, Integer)** *The GUI form element's option's value to be selected*
+> 
+> ### Returns
+>
+> None
+
+### SmartEvent Function
+
+```js
+smartEvent(name, eventFunction)
+```
+>
+> ### Description
+>
+> Creates an event listener for a GUI form element, but automatically determines the best listener type for the element. Requires the name parameter to have the type as a prefix (e.g. "button-", "select-"). An example name could be `select-1655377908386`, or `textbox-cool-text`.
+> 
+> - Button detected -> listen for "click"
+> 
+> - Textarea detected -> listen for "input"
+> 
+> - e.g.
+> 
+> ### Parameters
+>
+> **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder. Has to have the type prefix (e.g. "button-", "select-")*
+>
+> **@eventFunction (Function)** *Function to be called when event is activated*
+> 
+> ### Returns
+>
+> None
+
+### GetData Function
+
+```js
+getData(name)
+```
+>
+> ### Description
+>
+> Automatically determines the suitable "*get*" function for a GUI form element. Requires the name parameter to have the type as a prefix (e.g. "button-", "select-"). An example name could be `select-1655377908386`, or `textbox-cool-text`.
+>
+> - "Checkbox Group" -> use `getChecked(name)`
+> 
+> - "File Select" -> use `getFiles(name)`
+> 
+> - e.g.
+> 
+> ### Parameters
+>
+> **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder. Has to have the type prefix (e.g. "button-", "select-")*
+> 
+> ### Returns
+>
+> **(String, Integer, Array, Object)** *The GUI form element's data (e.g. element's value, element's selected values)*
+
+### SetData Function
+
+```js
+setData(name, newData)
+```
+>
+> ### Description
+>
+> Automatically determines the suitable "*set*" function for a GUI form element. Requires the name parameter to have the type as a prefix (e.g. "button-", "select-"). An example name could be `select-1655377908386`, or `textbox-cool-text`.
+>
+> - "Checkbox Group" -> use `setChecked(name)`
+> 
+> - "File Select" -> use `setFiles(name)`
+> 
+> - e.g.
+> 
+> ### Parameters
+>
+> **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder. Has to have the type prefix (e.g. "button-", "select-")*
+>
+> **@newData (String, Integer, Array)** *The GUI form element's new data (e.g. new values, new selected options)*
 > 
 > ### Returns
 >
