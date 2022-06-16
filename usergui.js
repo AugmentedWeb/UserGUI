@@ -661,8 +661,8 @@ class UserGui {
 	}
 
 	// Sets data to types: RADIO GROUP
-	setSelection(name, newValue) {
-		this.document.querySelector(`.field-${name}`).querySelector(`input[value=${newValue}]`).checked = true;
+	setSelection(name, newOptionsValue) {
+		this.document.querySelector(`.field-${name}`).querySelector(`input[value=${newOptionsValue}]`).checked = true;
 	}
 
 	// Gets data from types: CHECKBOX GROUP
@@ -693,8 +693,8 @@ class UserGui {
 	}
 
 	// Sets data to types: SELECT
-	setOption(name, newValue) {
-		this.document.querySelector(`.field-${name}`).querySelector(`option[value=${newValue}]`).selected = true;
+	setOption(name, newOptionsValue) {
+		this.document.querySelector(`.field-${name}`).querySelector(`option[value=${newOptionsValue}]`).selected = true;
 	}
 
 	#typeProperties = [
