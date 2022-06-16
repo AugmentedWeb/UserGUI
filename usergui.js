@@ -98,13 +98,11 @@ class UserGui {
 					}
 				`
 			}
+		},
+		"messages" : {
+			"blockedPopups" : () => alert(`The GUI (graphical user interface) failed to open!\n\nPossible reason: The popups are blocked.\n\nPlease allow popups for this site. (${window.location.hostname})`)
 		}
 	};
-
-	// Notify the user that the popups are blocked, hence no GUI
-	#handleBlockedPopups() {
-		alert(`The GUI (graphical user interface) failed to open!\n\nPossible reason: The popups are blocked.\n\nPlease allow popups for this site. (${window.location.hostname})`);
-	}
 
 	// This error page will be shown if the user has not added any pages
 	#errorPage = (title, code) => `
@@ -550,7 +548,7 @@ class UserGui {
 		} 
 		else if(!this.window) {
 			// The browser blocked the popup, notify the user
-			this.#handleBlockedPopups();
+			this.settings.messages.blockedPopups();
 		} else {
 			// Window was already opened, bring the window back to focus
 			this.window.focus();
