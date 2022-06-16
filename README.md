@@ -23,9 +23,15 @@ UserGui is built around [BeautifyTools' Form Builder](https://beautifytools.com/
 
 After designing the form, it can be exported as a HTML string. With one UserGui command it can be added to the GUI. The design process is increadibly easy and fast to do. You'll love it once you'll get used to it.
 
-### Dynamic navbar
+### Dynamic Navigation Tabs
 
-If the developer adds multiple pages to the GUI, a navigation bar will generated automatically.
+If the developer adds multiple pages to the GUI, navigation tabs will generated automatically.
+
+### Isolated Environment
+
+The GUI is partly isolated from the site's environment. Both internal and external GUI live in its own document. This means that the site's functions and CSS styles won't interfere with the GUI that easily. 
+
+The isolated environment and the option to use either an internal or externnal GUI helps keep the GUI working in almost any situation.
 
 ### Various other features
 
@@ -33,7 +39,6 @@ If the developer adds multiple pages to the GUI, a navigation bar will generated
 * Custom CSS input to internal and external GUI separately
 * Open the GUI in the center of the screen
 * Notify the user if popups are blocked
-* Dynamically size the external GUI
 * Bypass site CORS
 * and so on...
 
