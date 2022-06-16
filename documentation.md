@@ -248,7 +248,7 @@ setValue(name, newValue)
 >
 > ### Description
 >
-> Sets a GUI form element's value. Works on types "text field", "textarea", "date field" & "number".
+> Sets a GUI form element's value. Works on types "Text Field", "Textarea", "Date Field" & "Number".
 >
 > ### Parameters
 >
@@ -258,4 +258,42 @@ setValue(name, newValue)
 > 
 > ### Returns
 >
-> **(String, Integer)** *The GUI form element's value*
+> None
+
+### GetSelection Function
+
+```js
+getSelection(name)
+```
+>
+> ### Description
+>
+> Gets a GUI form element's selected item's value. Works on type "Radio Group".
+>
+> ### Parameters
+>
+> **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder*
+> 
+> ### Returns
+>
+> **(String, Integer)** *The GUI form element's selected item's value*
+
+### SetSelection Function
+
+```js
+setSelection(name, newValue) 
+```
+>
+> ### Description
+>
+> Selects a GUI form element's item. Works on type "Radio Group".
+>
+> ### Parameters
+>
+> **@name (String)** *Form element's name, taken from BeautifyTools' Form Builder*
+> 
+> **@newValue (String, Integer)** *The value of the GUI form element's item to be set as checked*
+> 
+> ### Returns
+>
+> None
