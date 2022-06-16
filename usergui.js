@@ -523,6 +523,11 @@ class UserGui {
 			// Create a new window for the GUI
 			this.window = window.open("", this.settings.windowName, `width=${this.settings.window.size.width}, height=${this.settings.window.size.height}, ${pos}`);
 
+			if(!this.window) {
+				this.settings.messages.blockedPopups();
+				return;
+			}
+
 			// Write the document to the new window
 			this.window.document.write(await this.#createDocument());
 
@@ -546,10 +551,8 @@ class UserGui {
 				this.close();
 			}
 		} 
-		else if(!this.window) {
-			// The browser blocked the popup, notify the user
-			this.settings.messages.blockedPopups();
-		} else {
+		
+		else {
 			// Window was already opened, bring the window back to focus
 			this.window.focus();
 		}
