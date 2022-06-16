@@ -502,8 +502,6 @@ Gui.iFrame
 ### Settings Object
 
 ```js
-[...]
-
 {
     "window" : {
         "title" : "No title set",
@@ -528,10 +526,10 @@ Gui.iFrame
     "messages" : {
         "blockedPopups" : () => alert(`[...]`)
     }
-};
+}
+```
 
-[...]
-
+```js
 const Gui = new UserGui;
 Gui.settings
 ```
