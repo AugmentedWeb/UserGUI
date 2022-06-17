@@ -10,7 +10,7 @@ A Graphical user interface for userscripts. Creating user-friendly userscripts c
 
 |           | Internal GUI                 | External GUI                 |
 |-----------|------------------------------|------------------------------|
-| Parent    | iFrame                       | New window                   |
+| Parent    | iFrame                       | New Window                   |
 | Positions | Inside document body         | Anywhere in screen           |
 | Weakness  | Can't move outside of window | Disabled popups hide the GUI |
 | Mobile   | Supports mobile devices, can't move window | Supports mobile devices |
@@ -54,7 +54,8 @@ UserGui doesn't need to load anything else than Bootstrap 5. Everything else fun
 
 ## Known issues
 
-- CSP might block parts of the GUI or the GUI entirely.
+- CSP might block parts of the GUI or stop it from opening up entirely.
+  - A bypass would require a fully isolated window
 
 ## Get started
 
