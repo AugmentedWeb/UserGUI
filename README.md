@@ -52,6 +52,10 @@ UserGui uses the power of [Bootstrap 5](https://getbootstrap.com/docs/5.0/gettin
 
 UserGui doesn't need to load anything else than Bootstrap 5. Everything else functions from pure vanilla JavaScript.
 
+## Known issues
+
+- CSP might block parts of the GUI or the GUI entirely.
+
 ## Get started
 
 I'm glad you're interested in using UserGui, welcome! To get started, please take a look at the [documentation](documentation.md).
