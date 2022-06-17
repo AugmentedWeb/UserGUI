@@ -616,23 +616,29 @@ class UserGui {
 			z-index: 2147483647;
 		`;
 
-		// Prepend the GUI to the document's body
-		document.body.prepend(iframe);
+		const waitForBody = setInterval(() => {
+			if(document?.body) {
+				clearInterval(waitForBody);
 
-		iframe.contentWindow.onload = () => {
-			// Fade-in implementation
-			iframe.style["opacity"] = "1";
-			setTimeout(() => iframe.style["transition"] = "none", fadeInSpeedMs);
+				// Prepend the GUI to the document's body
+				document.body.prepend(iframe);
 
-			this.window = iframe.contentWindow;
-			this.document = iframe.contentDocument;
-			this.iFrame = iframe;
-
-			this.#initializeInternalGuiEvents(iframe);
-			this.#initializeTabs(this);
-			
-			readyFunction();
-		}
+				iframe.contentWindow.onload = () => {
+					// Fade-in implementation
+					iframe.style["opacity"] = "1";
+					setTimeout(() => iframe.style["transition"] = "none", fadeInSpeedMs);
+		
+					this.window = iframe.contentWindow;
+					this.document = iframe.contentDocument;
+					this.iFrame = iframe;
+		
+					this.#initializeInternalGuiEvents(iframe);
+					this.#initializeTabs(this);
+					
+					readyFunction();
+				}
+			}
+		}, 100);
 	}
 
 	// Determines if the window is to be opened externally or internally
