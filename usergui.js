@@ -191,6 +191,30 @@ class UserGui {
 		}
 	}
 
+	// Make tabs function without bootstrap.js (CSP might block bootstrap and make the GUI nonfunctional)
+	#initializeTabs(_this) {
+		const handleTabClick = e => {
+			const target = e.target;
+			const contentID = target.getAttribute("data-bs-target");
+
+			target.classList.add("active");
+			_this.document.querySelector(contentID).classList.add("active");
+	
+			[..._this.document.querySelectorAll(".nav-link")].forEach(tab => {
+				if(tab != target) {
+					const contentID = tab.getAttribute("data-bs-target");
+
+					tab.classList.remove("active");
+					_this.document.querySelector(contentID).classList.remove("active");
+				}
+			});
+		}
+
+		[..._this.document.querySelectorAll(".nav-link")].forEach(tab => {
+			tab.addEventListener("click", handleTabClick);
+		});
+	}
+
 	// Will determine if a navbar is needed, returns either a regular GUI, or a GUI with a navbar
 	#getContent() {
 		// Only one page has been set, no navigation tabs will be created
@@ -227,14 +251,12 @@ class UserGui {
 	// Returns the GUI's whole document as string
 	async #createDocument() {
 		const bootstrapStyling = await this.#bypassCors("https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css");
-		const bootstrapBundle = await this.#bypassCors("https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js");
 
 		const externalDocument = `
 		<!DOCTYPE html>
 		<html>
 		<head>
 			<title>${this.settings.window.title}</title>
-			<script>${bootstrapBundle}</script>
 			<style>
 			${bootstrapStyling}
 			${this.settings.gui.external.style}
@@ -257,9 +279,6 @@ class UserGui {
 				width: ${this.settings.window.size.width}px
 			}
 			</style>
-			<script>
-			${bootstrapBundle}
-			</script>
 		</head>
 		<body>
 			<div id="gui">
@@ -546,6 +565,8 @@ class UserGui {
 
 			this.document = this.window.document;
 
+			this.#initializeTabs(this);
+
 			// Call user's function
 			if(typeof readyFunction == "function") {
 				readyFunction();
@@ -608,7 +629,8 @@ class UserGui {
 			this.iFrame = iframe;
 
 			this.#initializeInternalGuiEvents(iframe);
-
+			this.#initializeTabs(this);
+			
 			readyFunction();
 		}
 	}
