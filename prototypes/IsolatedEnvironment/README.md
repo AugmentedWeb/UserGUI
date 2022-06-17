@@ -10,7 +10,7 @@ Communication between the window and the userscript can be done in multiple ways
 
 ## How to test
 
-`CTRL + I`, paste this into your console,
+`CTRL + SHIFT + I`, paste this into your console,
 
 ```js
 window.open("https://augmentedweb.github.io/UserGui/prototypes/IsolatedEnvironment/index.html", `
