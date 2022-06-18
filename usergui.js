@@ -94,6 +94,7 @@ class UserGui {
 				`
 			},
 			"external" : {
+				"popup" : true,
 				"style" : `
 					.rendered-form {
 						padding: 10px; 
@@ -538,14 +539,19 @@ class UserGui {
 
 		if(noWindow || this.window == undefined) {
 			let pos = "";
+			let windowSettings = "";
 
-			if(this.settings.window.centered) {
+			if(this.settings.window.centered && this.settings.gui.external.popup) {
 				const centerPos = this.#getCenterScreenPosition();
 				pos = `left=${centerPos.x}, top=${centerPos.y}`;
 			}
 
+			if(this.settings.gui.external.popup) {
+				windowSettings = `width=${this.settings.window.size.width}, height=${this.settings.window.size.height}, ${pos}`;
+			}
+
 			// Create a new window for the GUI
-			this.window = window.open("", this.settings.windowName, `width=${this.settings.window.size.width}, height=${this.settings.window.size.height}, ${pos}`);
+			this.window = window.open("", this.settings.windowName, windowSettings);
 
 			if(!this.window) {
 				this.settings.messages.blockedPopups();
@@ -554,6 +560,18 @@ class UserGui {
 
 			// Write the document to the new window
 			this.window.document.write(await this.#createDocument());
+
+			if(!this.settings.gui.external.popup) {
+				this.window.document.body.style.width = `${this.settings.window.size.width}px`;
+
+				if(this.settings.window.centered) {
+					const centerPos = this.#getCenterScreenPosition();
+
+					this.window.document.body.style.position = "absolute";
+					this.window.document.body.style.left = `${centerPos.x}px`;
+					this.window.document.body.style.top = `${centerPos.y}px`;
+				}
+			}
 
 			// Dynamic sizing (only height)
 			this.window.resizeTo(
