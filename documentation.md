@@ -588,6 +588,7 @@ Gui.iFrame
             "style" : `[...]`
         },
         "external" : {
+            "popup" : true,
             "style" : `[...]`
         }
     },
