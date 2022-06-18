@@ -3,6 +3,15 @@
 	<head>
 		<title>UserGui Isolated Environment Test</title>
 		<script>
+		window.onload = function() {
+			window.addEventListener('message', e => {
+				console.log(e);
+				if(e.data == "Ping") {
+					e.source.postMessage("Pong", e.origin);
+				}
+			});
+		}
+		
 		const body = document.createElement("body");
 		body.innerHTML = window.name;
 
