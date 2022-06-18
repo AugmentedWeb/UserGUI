@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>UserGui Isolated Environment Test</title>
+		<script>
+		window.onload = () => {
+			let firstOrigin = undefined;
+			let firstTime = true;
+
+			function handleEval(e) {
+				const evaluated = eval(e.data?.input);
+
+				if(e.data?.returns) {
+					e.source.postMessage({
+						"action" : "eval",
+						"input"  : e.data?.input,
+						"result" : evaluated
+					}, e.origin);
+				}
+			}
+
+			function handlePingPong(e) {
+				if(e.data?.input == "ping") {
+					e.source.postMessage({
+						"action" : e.data?.action,
+						"input" : e.data?.input,
+						"result" : "pong"
+					}, e.origin);
+				}
+			}
+
+			function onMessage(e) {
+				if(firstTime) {
+					firstOrigin = e.origin;
+					firstTime = false;
+				} else {
+					if(firstOrigin != e.origin) {
+						console.warn(`Received a message, but the origin was wrong.`);
+						return;
+					}
+				}
+
+				console.log(e);
+
+				if(typeof e.data == "object") {
+					switch(e.data?.action) {
+						case "eval":
+							handleEval(e);
+							break;
+						case "pingPong":
+							handlePingPong(e);
+							break;
+					}
+				}
+			}
+
+			window.addEventListener('message', onMessage);
+		}
+		
+		if(window.name.length > 0) {
+			const body = document.createElement("body");
+			body.innerHTML = window.name;
+
+			document.body = body;
+		}
+		</script>
+	</head>
+	<body>
+	<!-- Reserved for the user's GUI -->
+	</body>
+</html>
