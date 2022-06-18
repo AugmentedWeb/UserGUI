@@ -8,6 +8,10 @@ Open the GUI in a new origin, so that the browser doesn't apply the site's CSP r
 
 Communication between the window and the userscript can be done in multiple ways, but I'll have to see how I'll implement it.
 
+## Issues
+
+Datatransfer might require `eval(string)` function, which is dangerous if the userscript evaluates strings from the external "isolated" site.
+
 ## How to test
 
 `CTRL + SHIFT + I`, paste this into your console,
