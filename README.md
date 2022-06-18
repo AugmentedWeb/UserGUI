@@ -4,6 +4,11 @@
 
 A Graphical user interface for userscripts. Creating user-friendly userscripts can be a bit challenging, as the majority of regular users are scared to touch your code. UserGui allows you to unlock your userscript to more people, and to create a more pleasing experience.
 
+```js
+// @grant       GM.xmlHttpRequest
+// @require     https://raw.githubusercontent.com/AugmentedWeb/UserGui/main/usergui.js
+```
+
 ## Feature overview
 
 ### Internal & External GUI
