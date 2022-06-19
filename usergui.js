@@ -496,7 +496,6 @@ class UserGui {
 
 		// Dragging start (iFrame)
 		this.document.querySelector("#header").addEventListener('mousedown', e => {
-			e.preventDefault();
 			dragging = true;
 
 			dragStartPos.x = e.clientX;
@@ -505,15 +504,11 @@ class UserGui {
 
 		// Resizing start
 		this.document.querySelector("#resizer").addEventListener('mousedown', e => {
-			e.preventDefault();
-
 			resizing = true;
 		});
 
 		// While dragging or resizing (iFrame)
 		this.document.addEventListener('mousemove', e => {
-			e.preventDefault();
-
 			if(dragging)
 				handleDrag(true, e);
 
@@ -523,8 +518,6 @@ class UserGui {
 
 		// While dragging or resizing (Main window)
 		document.addEventListener('mousemove', e => {
-			e.preventDefault();
-
 			if(dragging)
 				handleDrag(false, e);
 
@@ -534,14 +527,12 @@ class UserGui {
 
 		// Stop dragging and resizing (iFrame)
 		this.document.addEventListener('mouseup', e => {
-			e.preventDefault();
 			dragging = false;
 			resizing = false;
 		});
 
 		// Stop dragging and resizing (Main window)
 		document.addEventListener('mouseup', e => {
-			e.preventDefault();
 			dragging = false;
 			resizing = false;
 		});
@@ -551,8 +542,6 @@ class UserGui {
 
 		// Listener for the close button, closes the internal GUI
 		this.document.querySelector("#button-close-gui").addEventListener('click', e => {
-			e.preventDefault();
-
 			this.close();
 		});
 
