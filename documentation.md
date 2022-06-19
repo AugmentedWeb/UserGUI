@@ -175,7 +175,7 @@ If you answered 4, that's correct!
 ### AddPage Function
 
 ```js
-addPage(htmlString, tabName)
+addPage(tabName, htmlString)
 ```
 >
 > ### Description
@@ -184,9 +184,9 @@ addPage(htmlString, tabName)
 >
 > ### Parameters
 >
-> **@htmlString (String)** *HTML form content taken from BeautifyTools' Form Builder*
-> 
 > **@tabName (String)** *Navigation bar tab's title*
+>
+> **@htmlString (String)** *HTML form content taken from BeautifyTools' Form Builder*
 >
 > ### Returns
 >
