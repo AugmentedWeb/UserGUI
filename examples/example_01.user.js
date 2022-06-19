@@ -54,11 +54,14 @@ Gui.addPage(`
                 <input name="radio-group-background-color" access="false" id="radio-group-background-color-3" value="green" type="radio">
                 <label for="radio-group-background-color-3">Green</label>
             </div>
-                      <div class="formbuilder-radio">
+            <div class="formbuilder-radio">
                 <input name="radio-group-background-color" access="false" id="radio-group-background-color-3" value="purple" type="radio">
                 <label for="radio-group-background-color-3">Purple</label>
             </div>
         </div>
+    </div>
+    <div class="formbuilder-button form-group field-button-save-config">
+        <button type="button" class="btn-success btn" name="button-save-config" access="false" style="success" id="button-save-config">Save</button>
     </div>
 </div>
 `, "Settings");
@@ -75,7 +78,6 @@ function changeSiteValues(querySelector, newValue) {
 
 function openGui() {
     Gui.open(() => {
-        // "Click" listener for the "Change Value" button
         Gui.smartEvent("button-change-value", () => {
             const querySelector = Gui.getValue("text-query-selector");
             const newValue = Gui.getValue("text-new-value");
@@ -83,13 +85,17 @@ function openGui() {
             changeSiteValues(querySelector, newValue);
         });
 
-        // "Change" listener for the primary color radio group
-        const bgColorRadio = "radio-group-background-color";
-        Gui.smartEvent(bgColorRadio, () => {
-            const color = Gui.getData(bgColorRadio);
+        Gui.smartEvent("radio-group-background-color", () => {
+            const color = Gui.getData("radio-group-background-color");
 
             Gui.setPrimaryColor(color);
         });
+      
+        Gui.smartEvent("button-save-config", () => {
+            Gui.save();
+        });
+      
+        Gui.load();
     });
 }
 
