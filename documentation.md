@@ -24,7 +24,7 @@ Grant the userscript `GM_xmlhttpRequest`, `GM_getValue`, `GM_setValue` and requi
 ```js
 // @grant       GM_getValue
 // @grant       GM_setValue
-// @grant       GM_xmlHttpRequest
+// @grant       GM_xmlhttpRequest
 // @require     https://raw.githubusercontent.com/AugmentedWeb/UserGui/main/usergui.js
 ```
 
