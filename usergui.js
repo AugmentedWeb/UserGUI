@@ -732,6 +732,24 @@ class UserGui {
 		field.dispatchEvent(event);
 	}
 
+	setPrimaryColor(hex) {
+		const styles = `
+		#header {
+			background-color: ${hex} !important;
+		}
+		.nav-link {
+			color: ${hex} !important;
+		}
+		.text-primary {
+			color: ${hex} !important;
+		}
+		`;
+		
+		const styleSheet = document.createElement("style")
+		styleSheet.innerText = styles;
+		this.document.head.appendChild(styleSheet);
+	}
+
 	// Creates an event listener a GUI element
 	event(name, event, eventFunction) {
 		this.document.querySelector(`.field-${name}`).addEventListener(event, eventFunction);
