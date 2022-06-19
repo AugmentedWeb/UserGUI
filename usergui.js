@@ -41,6 +41,7 @@ class UserGui {
 			}
 		},
 		"gui" : {
+			"centeredItems" : false,
 			"internal" : {
 				"darkCloseButton" : false,
 				"style" : `
@@ -269,6 +270,14 @@ class UserGui {
 			<style>
 			${bootstrapStyling}
 			${this.settings.gui.external.style}
+			${
+			this.settings.gui.centeredItems 
+				? `.form-group {
+						display: flex;
+						justify-content: center;
+					}`
+				: ""
+			}
 			</style>
 		</head>
 		<body>
@@ -286,6 +295,14 @@ class UserGui {
 			${this.settings.gui.internal.style}
 			body {
 				width: ${this.settings.window.size.width}px
+			}
+			${
+			this.settings.gui.centeredItems 
+				? `.form-group {
+						display: flex;
+						justify-content: center;
+					}`
+				: ""
 			}
 			</style>
 		</head>
