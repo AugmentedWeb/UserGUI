@@ -40,12 +40,8 @@ Gui.addPage(`
     <div class="">
         <h2 access="false" id="control-274549">GUI Settings</h2></div>
     <div class="formbuilder-radio-group form-group field-radio-group-background-color">
-        <label for="radio-group-background-color" class="formbuilder-radio-group-label">Background Color</label>
+        <label for="radio-group-background-color" class="formbuilder-radio-group-label">Primary Color</label>
         <div class="radio-group">
-            <div class="formbuilder-radio">
-                <input name="radio-group-background-color" access="false" id="radio-group-background-color-0" value="white" type="radio" checked="checked">
-                <label for="radio-group-background-color-0">White</label>
-            </div>
             <div class="formbuilder-radio">
                 <input name="radio-group-background-color" access="false" id="radio-group-background-color-1" value="black" type="radio">
                 <label for="radio-group-background-color-1">Black</label>
@@ -54,22 +50,13 @@ Gui.addPage(`
                 <input name="radio-group-background-color" access="false" id="radio-group-background-color-2" value="pink" type="radio">
                 <label for="radio-group-background-color-2">Pink</label>
             </div>
-        </div>
-    </div>
-    <div class="formbuilder-radio-group form-group field-radio-group-text-color">
-        <label for="radio-group-text-color" class="formbuilder-radio-group-label">Text Color</label>
-        <div class="radio-group">
-			<div class="formbuilder-radio">
-				<input name="radio-group-text-color" access="false" id="radio-group-text-color-1" value="black" type="radio" checked="checked">
-				<label for="radio-group-text-color-1">Black</label>
-			</div>
             <div class="formbuilder-radio">
-                <input name="radio-group-text-color" access="false" id="radio-group-text-color-0" value="white" type="radio">
-                <label for="radio-group-text-color-0">White</label>
+                <input name="radio-group-background-color" access="false" id="radio-group-background-color-3" value="green" type="radio">
+                <label for="radio-group-background-color-3">Green</label>
             </div>
-            <div class="formbuilder-radio">
-                <input name="radio-group-text-color" access="false" id="radio-group-text-color-2" value="pink" type="radio">
-                <label for="radio-group-text-color-2">Pink</label>
+                      <div class="formbuilder-radio">
+                <input name="radio-group-background-color" access="false" id="radio-group-background-color-3" value="purple" type="radio">
+                <label for="radio-group-background-color-3">Purple</label>
             </div>
         </div>
     </div>
@@ -86,40 +73,24 @@ function changeSiteValues(querySelector, newValue) {
 	}
 }
 
-function changeBgColor(color) {
-	Gui.document.body.style["background-color"] = color;
-}
-
-function changeTxtColor(color) {
-	Gui.document.body.style["color"] = color;
-}
-
 function openGui() {
-	Gui.open(() => {
-		// "Click" listener for the "Change Value" button
-		Gui.smartEvent("button-change-value", () => {
-			const querySelector = Gui.getValue("text-query-selector");
-			const newValue = Gui.getValue("text-new-value");
+    Gui.open(() => {
+        // "Click" listener for the "Change Value" button
+        Gui.smartEvent("button-change-value", () => {
+            const querySelector = Gui.getValue("text-query-selector");
+            const newValue = Gui.getValue("text-new-value");
 
-			changeSiteValues(querySelector, newValue);
-		});
+            changeSiteValues(querySelector, newValue);
+        });
 
-		// "Change" listener for the background color radio group
-		const bgColorRadio = "radio-group-background-color";
-		Gui.smartEvent(bgColorRadio, () => {
-			const color = Gui.getData(bgColorRadio);
+        // "Change" listener for the primary color radio group
+        const bgColorRadio = "radio-group-background-color";
+        Gui.smartEvent(bgColorRadio, () => {
+            const color = Gui.getData(bgColorRadio);
 
-			changeBgColor(color);
-		});
-
-		// "Change" listener for the text color radio group
-		const txtColorRadio = "radio-group-text-color";
-		Gui.smartEvent(txtColorRadio, () => {
-			const color = Gui.getData(txtColorRadio);
-
-			changeTxtColor(color);
-		});
-	});
+            Gui.setPrimaryColor(color);
+        });
+    });
 }
 
 const openBtn = document.createElement("button");
