@@ -2,7 +2,9 @@
 // @name        Example-GUI
 // @namespace   HKR
 // @match       https://example.com/*
-// @grant       GM.xmlHttpRequest
+// @grant       GM_getValue
+// @grant       GM_setValue
+// @grant       GM_xmlhttpRequest
 // @version     1.0
 // @author      HKR
 // @description This is an example userscript made for UserGui
