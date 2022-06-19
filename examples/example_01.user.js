@@ -19,7 +19,7 @@ Gui.settings.window.centered = true;
 Gui.addPage(`
 <div class="rendered-form">
 	<div class="">
-		<h2 class="userscript-title" access="false" id="control-8281685">Site InnerText Changer</h2></div>
+		<h2 class="userscript-title" access="false" class="text-primary" id="control-8281685">Site InnerText Changer</h2></div>
 	<div class=""><address class="userscript-address" access="false" id="control-6944086">This is an example GUI</address></div>
 	<div class="formbuilder-text form-group field-text-query-selector">
 		<label for="text-query-selector" class="formbuilder-text-label">Query Selector</label>
@@ -38,7 +38,7 @@ Gui.addPage(`
 Gui.addPage(`
 <div class="rendered-form">
     <div class="">
-        <h2 access="false" id="control-274549">GUI Settings</h2></div>
+        <h2 access="false" class="text-primary" id="control-274549">GUI Settings</h2></div>
     <div class="formbuilder-radio-group form-group field-radio-group-background-color">
         <label for="radio-group-background-color" class="formbuilder-radio-group-label">Primary Color</label>
         <div class="radio-group">
