@@ -226,6 +226,78 @@ close()
 >
 > None
 
+### Save Function
+
+```js
+save()
+```
+>
+> ### Description
+>
+> Saves the current GUI form element's values.
+>
+> ### Parameters
+>
+> None
+>
+> ### Returns
+>
+> None
+
+### Load Function
+
+```js
+load()
+```
+>
+> ### Description
+>
+> Loads the saved GUI form element's values.
+>
+> ### Parameters
+>
+> None
+>
+> ### Returns
+>
+> None
+
+### GetConfig Function
+
+```js
+getConfig()
+```
+>
+> ### Description
+>
+> Gets the config from the userscript manager's storage.
+>
+> ### Parameters
+>
+> None
+>
+> ### Returns
+>
+> **(Array)** *The saved GUI config as an object array. The objects contain a form element's name and value.*
+
+### DispatchFormEvent Function
+
+```js
+dispatchFormEvent(name)
+```
+>
+> ### Description
+>
+> Dispatches an event on a GUI form element
+>
+> ### Parameters
+>
+> **@name (String)** *[Form element's name, taken from BeautifyTools' Form Builder](#important-parameter)*
+>
+> ### Returns
+>
+> None
+
 ## Event Functions
 
 ### Event Function
