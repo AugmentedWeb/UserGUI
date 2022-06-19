@@ -333,7 +333,7 @@ class UserGui {
 	}
 
 	// The user will use this function to add a page to their GUI, with their own HTML (Bootstrap 5)
-	addPage(htmlString, tabName) {
+	addPage(tabName, htmlString) {
 		if(this.#guiPages[0].name == "default_no_content_set") {
 			this.#guiPages = [];
 		}
