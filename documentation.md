@@ -300,6 +300,24 @@ dispatchFormEvent(name)
 >
 > None
 
+### SetPrimaryColor Function
+
+```js
+setPrimaryColor(hex)
+```
+>
+> ### Description
+>
+> Changes the GUI Header's, Navbar's and Bootstrap's primary text's color
+>
+> ### Parameters
+>
+> **@hex (String)** *A hex color code*
+>
+> ### Returns
+>
+> None
+
 ## Event Functions
 
 ### Event Function
