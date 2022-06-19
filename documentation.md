@@ -19,12 +19,12 @@
 
 ### 1) Setup the userscript header
 
-Grant the userscript `GM.xmlHttpRequest` and require the UserGui, like so.
+Grant the userscript `GM_xmlHttpRequest`, `GM_getValue`, `GM_setValue` and require the UserGui, like so.
 
 ```js
 // @grant       GM_getValue
 // @grant       GM_setValue
-// @grant       GM.xmlHttpRequest
+// @grant       GM_xmlHttpRequest
 // @require     https://raw.githubusercontent.com/AugmentedWeb/UserGui/main/usergui.js
 ```
 
