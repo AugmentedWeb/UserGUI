@@ -675,6 +675,7 @@ Gui.iFrame
         }
     },
     "gui" : {
+        "centeredItems" : false,
         "internal" : {
             "darkCloseButton" : false,
             "style" : `[...]`
