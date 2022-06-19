@@ -10,8 +10,16 @@ class UserGui {
 		const grantArr = GM_info?.script?.grant;
 	
 		if(typeof grantArr == "object") {
-			if(!grantArr.includes("GM.xmlHttpRequest")) {
-				prompt(`${this.#projectName} requires xmlHttpRequest to function!\n\nPlease add this to your userscript (with a dot)`, "// @grant       GM.xmlHttpRequest");
+			if(!grantArr.includes("GM_xmlhttpRequest")) {
+				prompt(`${this.#projectName} needs GM_xmlhttpRequest!\n\nPlease add this to your userscript's header...`, "// @grant       GM_xmlhttpRequest");
+			}
+
+			if(!grantArr.includes("GM_getValue")) {
+				prompt(`${this.#projectName} needs GM_getValue!\n\nPlease add this to your userscript's header...`, "// @grant       GM_getValue");
+			}
+
+			if(!grantArr.includes("GM_setValue")) {
+				prompt(`${this.#projectName} needs GM_getValue!\n\nPlease add this to your userscript's header...`, "// @grant       GM_setValue");
 			}
 		}
 	}
@@ -155,7 +163,7 @@ class UserGui {
 	// The userscript manager's xmlHttpRequest is used to bypass CORS limitations (To load Bootstrap)
 	async #bypassCors(externalFile) {
 		const res = await new Promise(resolve => {
-			GM.xmlHttpRequest({
+			GM_xmlhttpRequest({
 			method: "GET",
 			url: externalFile,
 			onload: resolve
@@ -682,6 +690,48 @@ class UserGui {
 		}
 	}
 
+	save() {
+		let config = [];
+
+		if(this.document) {
+			[...this.document.querySelectorAll(".form-group")].forEach(elem => {
+				const inputElem = elem.querySelector("[name]");
+	
+				const name = inputElem.getAttribute("name"),
+					  data = this.getData(name);
+	
+				if(data) {
+					config.push({ "name" : name, "value" : data });
+				}
+			});
+		}
+
+		GM_setValue("config", config);
+	}
+
+	load() {
+		const config = this.getConfig();
+
+		if(this.document) {
+			config.forEach(elemConfig => {
+				this.setData(elemConfig.name, elemConfig.value);
+			})
+		}
+	}
+
+	getConfig() {
+		return GM_getValue("config");
+	}
+
+	dispatchFormEvent(name) {
+		const type = name.split("-")[0].toLowerCase();
+		const properties = this.#typeProperties.find(x => type == x.type);
+		const event = new Event(properties.event);
+
+		const field = this.document.querySelector(`.field-${name}`);
+		field.dispatchEvent(event);
+	}
+
 	// Creates an event listener a GUI element
 	event(name, event, eventFunction) {
 		this.document.querySelector(`.field-${name}`).addEventListener(event, eventFunction);
@@ -711,8 +761,10 @@ class UserGui {
 	// Sets data to types: TEXT FIELD, TEXT AREA, DATE FIELD & NUMBER
 	setValue(name, newValue) {
 		this.document.querySelector(`.field-${name}`).querySelector(`[id=${name}]`).value = newValue;
+
+		this.dispatchFormEvent(name);
 	}
-	
+
 	// Gets data from types: RADIO GROUP
 	getSelection(name) {
 		return this.document.querySelector(`.field-${name}`).querySelector(`input[name=${name}]:checked`).value;
@@ -721,6 +773,8 @@ class UserGui {
 	// Sets data to types: RADIO GROUP
 	setSelection(name, newOptionsValue) {
 		this.document.querySelector(`.field-${name}`).querySelector(`input[value=${newOptionsValue}]`).checked = true;
+
+		this.dispatchFormEvent(name);
 	}
 
 	// Gets data from types: CHECKBOX GROUP
@@ -738,6 +792,8 @@ class UserGui {
 				checkbox.checked = true;
 			}
 		});
+
+		this.dispatchFormEvent(name);
 	}
 	
 	// Gets data from types: FILE UPLOAD
@@ -753,6 +809,8 @@ class UserGui {
 	// Sets data to types: SELECT
 	setOption(name, newOptionsValue) {
 		this.document.querySelector(`.field-${name}`).querySelector(`option[value=${newOptionsValue}]`).selected = true;
+
+		this.dispatchFormEvent(name);
 	}
 
 	#typeProperties = [
