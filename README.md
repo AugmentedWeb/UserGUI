@@ -53,7 +53,7 @@ The isolated environment and the option to use either an internal or external GU
 
 ### Bootstrap 5
 
-UserGui uses the power of [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/) to make beautiful interfaces. Bootstrap is loaded using the userscript manager's `GM.xmlHttpRequest` function. This is done in order to bypass possible CORS-limitations.
+UserGui uses the power of [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/) to make beautiful interfaces. Bootstrap is loaded using the userscript manager's `GM_xmlHttpRequest` function. This is done in order to bypass possible CORS-limitations.
 
 ### Other
 
