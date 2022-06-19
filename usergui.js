@@ -729,7 +729,7 @@ class UserGui {
 	load() {
 		const config = this.getConfig();
 
-		if(this.document) {
+		if(this.document && config) {
 			config.forEach(elemConfig => {
 				this.setData(elemConfig.name, elemConfig.value);
 			})
