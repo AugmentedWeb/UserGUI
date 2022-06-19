@@ -16,7 +16,7 @@ const Gui = new UserGui;
 Gui.settings.window.title = "GUI Demo"; // set window title
 Gui.settings.window.centered = true;
 
-Gui.addPage(`
+Gui.addPage("Main", `
 <div class="rendered-form">
 	<div class="">
 		<h2 class="userscript-title" access="false" id="control-8281685">Site InnerText Changer</h2></div>
@@ -33,9 +33,9 @@ Gui.addPage(`
 		<button type="button" class="btn-success btn" name="button-change-value" access="false" style="success" id="button-change-value">Change value</button>
 	</div>
 </div>
-`, "Main");
+`);
 
-Gui.addPage(`
+Gui.addPage("Settings", `
 <div class="rendered-form">
     <div class="">
         <h2 access="false" class="text-primary" id="control-274549">GUI Settings</h2></div>
@@ -64,7 +64,7 @@ Gui.addPage(`
         <button type="button" class="btn-success btn" name="button-save-config" access="false" style="success" id="button-save-config">Save</button>
     </div>
 </div>
-`, "Settings");
+`);
 
 function changeSiteValues(querySelector, newValue) {
 	if(querySelector && newValue) {
