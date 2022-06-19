@@ -52,16 +52,16 @@ Use [BeautifyTools' Form Builder](https://beautifytools.com/html-form-builder.ph
 
 > **NOTE: Other form builders are not supported, please only use the BeautifyTool's form builder.**
 
-Insert the form's HTML string, **as a whole**, into the `Gui.addPage(htmlString, tabName)` function's @htmlString parameter, like so.
+Insert the form's HTML string, **as a whole**, into the `Gui.addPage(tabName, htmlString)` function's @htmlString parameter, like so.
 
 ```js
-Gui.addPage(`
+Gui.addPage("Some tab name", `
 <div class="rendered-form">
     <div class="formbuilder-button form-group field-button-1655324182259">
         <button type="button" class="btn-default btn" name="button-1655324182259" access="false" style="default" id="button-1655324182259">Button</button>
     </div>
 </div>
-`, "Some tab name");
+`);
 ```
 
 [Learn more about addPage function](#addpage-function)
@@ -130,13 +130,13 @@ Gui.settings.window.title = "GUI Demo"; // set window title
 Gui.settings.window.centered = true; // GUI starts at the center of the screen
 Gui.settings.window.external = true; // GUI opens up externally
 
-Gui.addPage(`
+Gui.addPage("Some tab name", `
 <div class="rendered-form">
     <div class="formbuilder-button form-group field-button-1655324182259">
         <button type="button" class="btn-default btn" name="button-1655324182259" access="false" style="default" id="button-1655324182259">Button</button>
     </div>
 </div>
-`, "Some tab name");
+`);
 
 Gui.open(() => {
     Gui.smartEvent("button-1655324182259", () => {
