@@ -202,25 +202,25 @@ class UserGui {
 	}
 
 	// Make tabs function without bootstrap.js (CSP might block bootstrap and make the GUI nonfunctional)
-	#initializeTabs(_this) {
+	#initializeTabs() {
 		const handleTabClick = e => {
 			const target = e.target;
 			const contentID = target.getAttribute("data-bs-target");
 
 			target.classList.add("active");
-			_this.document.querySelector(contentID).classList.add("active");
+			this.document.querySelector(contentID).classList.add("active");
 	
-			[..._this.document.querySelectorAll(".nav-link")].forEach(tab => {
+			[...this.document.querySelectorAll(".nav-link")].forEach(tab => {
 				if(tab != target) {
 					const contentID = tab.getAttribute("data-bs-target");
 
 					tab.classList.remove("active");
-					_this.document.querySelector(contentID).classList.remove("active");
+					this.document.querySelector(contentID).classList.remove("active");
 				}
 			});
 		}
 
-		[..._this.document.querySelectorAll(".nav-link")].forEach(tab => {
+		[...this.document.querySelectorAll(".nav-link")].forEach(tab => {
 			tab.addEventListener("click", handleTabClick);
 		});
 	}
@@ -609,7 +609,7 @@ class UserGui {
 
 			this.document = this.window.document;
 
-			this.#initializeTabs(this);
+			this.#initializeTabs();
 
 			// Call user's function
 			if(typeof readyFunction == "function") {
@@ -677,7 +677,7 @@ class UserGui {
 					this.iFrame = iframe;
 		
 					this.#initializeInternalGuiEvents(iframe);
-					this.#initializeTabs(this);
+					this.#initializeTabs();
 					
 					readyFunction();
 				}
@@ -708,7 +708,7 @@ class UserGui {
 		}
 	}
 
-	save() {
+	saveConfig() {
 		let config = [];
 
 		if(this.document) {
@@ -727,7 +727,7 @@ class UserGui {
 		GM_setValue("config", config);
 	}
 
-	load() {
+	loadConfig() {
 		const config = this.getConfig();
 
 		if(this.document && config) {
@@ -739,6 +739,14 @@ class UserGui {
 
 	getConfig() {
 		return GM_getValue("config");
+	}
+
+	resetConfig() {
+		const config = this.getConfig();
+
+		if(config) {
+			GM_setValue("config", []);
+		}
 	}
 
 	dispatchFormEvent(name) {
