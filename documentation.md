@@ -231,7 +231,7 @@ close()
 ### Save Function
 
 ```js
-save()
+saveConfig()
 ```
 >
 > ### Description
@@ -249,7 +249,7 @@ save()
 ### Load Function
 
 ```js
-load()
+loadConfig()
 ```
 >
 > ### Description
@@ -282,6 +282,24 @@ getConfig()
 >
 > **(Array)** *The saved GUI config as an object array. The objects contain a form element's name and value.*
 
+### GetConfig Function
+
+```js
+resetConfig()
+```
+>
+> ### Description
+>
+> Resets the config. The array of stored values will be wiped.
+>
+> ### Parameters
+>
+> None
+>
+> ### Returns
+>
+> None
+> 
 ### DispatchFormEvent Function
 
 ```js
