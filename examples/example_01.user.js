@@ -92,10 +92,10 @@ function openGui() {
         });
       
         Gui.smartEvent("button-save-config", () => {
-            Gui.save();
+            Gui.saveConfig();
         });
       
-        Gui.load();
+        Gui.loadConfig();
     });
 }
 
