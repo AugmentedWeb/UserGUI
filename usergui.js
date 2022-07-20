@@ -633,7 +633,7 @@ class UserGui {
 			return;
 		}
 
-		const fadeInSpeedMs = 400;
+		const fadeInSpeedMs = 250;
 
 		let left = 0, top = 0;
 
