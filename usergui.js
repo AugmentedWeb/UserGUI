@@ -100,6 +100,9 @@ class UserGui {
 						bottom: 0;
 						right: 0;
 					}
+					.formbuilder-button {
+					    width: fit-content;
+					}
 				`
 			},
 			"external" : {
@@ -669,7 +672,7 @@ class UserGui {
 
 				iframe.contentWindow.onload = () => {
 					// Fade-in implementation
-          setTimeout(() => iframe.style["opacity"] = "1", fadeInSpeedMs/2);
+					setTimeout(() => iframe.style["opacity"] = "1", fadeInSpeedMs/2);
 					setTimeout(() => iframe.style["transition"] = "none", fadeInSpeedMs + 500);
 		
 					this.window = iframe.contentWindow;
