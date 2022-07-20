@@ -633,7 +633,7 @@ class UserGui {
 			return;
 		}
 
-		const fadeInSpeedMs = 250;
+		const fadeInSpeedMs = 400;
 
 		let left = 0, top = 0;
 
@@ -654,7 +654,7 @@ class UserGui {
 			height: ${this.settings.window.size.height};
 			border: 0;
 			opacity: 0;
-			transition: all ${500/1000}s;
+			transition: all ${fadeInSpeedMs/1000}s;
 			border-radius: 5px;
 			box-shadow: rgb(0 0 0 / 6%) 10px 10px 10px;
 			z-index: 2147483647;
@@ -669,8 +669,8 @@ class UserGui {
 
 				iframe.contentWindow.onload = () => {
 					// Fade-in implementation
-					iframe.style["opacity"] = "1";
-					setTimeout(() => iframe.style["transition"] = "none", fadeInSpeedMs);
+          setTimeout(() => iframe.style["opacity"] = "1", fadeInSpeedMs/2);
+					setTimeout(() => iframe.style["transition"] = "none", fadeInSpeedMs + 500);
 		
 					this.window = iframe.contentWindow;
 					this.document = iframe.contentDocument;
