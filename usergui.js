@@ -525,8 +525,6 @@ class UserGui {
 
 		// While dragging or resizing (Main window)
 		document.addEventListener('mousemove', e => {
-			e.preventDefault();
-
 			if(dragging)
 				handleDrag(false, e);
 
@@ -544,8 +542,6 @@ class UserGui {
 
 		// Stop dragging and resizing (Main window)
 		document.addEventListener('mouseup', e => {
-			e.preventDefault();
-
 			dragging = false;
 			resizing = false;
 		});
