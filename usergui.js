@@ -351,8 +351,8 @@ class UserGui {
 		const guiWidth = this.settings.window.size.width;
 		const guiHeight = this.settings.window.size.height;
 
-		const x = (screen.width / 2) - (guiWidth / 2);
-		const y = (screen.height / 2) - (guiHeight / 2);
+		const x = (screen.width - guiWidth) / 2;
+		const y = (screen.height - guiHeight) / 2;
 		
 		return { "x" : x, "y": y };
 	}
