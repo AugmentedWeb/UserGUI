@@ -19,7 +19,7 @@ class UserGui {
 			}
 
 			if(!grantArr.includes("GM_setValue")) {
-				prompt(`${this.#projectName} needs GM_getValue!\n\nPlease add this to your userscript's header...`, "// @grant       GM_setValue");
+				prompt(`${this.#projectName} needs GM_setValue!\n\nPlease add this to your userscript's header...`, "// @grant       GM_setValue");
 			}
 		}
 	}
