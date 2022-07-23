@@ -48,6 +48,7 @@ class UserGui {
 					body {
 						background-color: #ffffff;
 						overflow: hidden;
+						width: 100% !important;
 					}
 
 					form {
@@ -100,6 +101,7 @@ class UserGui {
 						bottom: 0;
 						right: 0;
 					}
+
 					.formbuilder-button {
 					    width: fit-content;
 					}
@@ -296,9 +298,6 @@ class UserGui {
 			<style>
 			${bootstrapStyling}
 			${this.settings.gui.internal.style}
-			body {
-				width: ${this.settings.window.size.width}px
-			}
 			${
 			this.settings.gui.centeredItems 
 				? `.form-group {
@@ -364,8 +363,8 @@ class UserGui {
 
 		// Sets the iFrame's size
 		function setFrameSize(x, y) {
-			iFrame.style.width = x + "px";
-			iFrame.style.height = y + "px";
+			iFrame.style.width = `${x}px`;
+			iFrame.style.height = `${y}px`;
 		}
 
 		// Gets the iFrame's size
@@ -377,8 +376,8 @@ class UserGui {
 
 		// Sets the iFrame's position relative to the main window's document
 		function setFramePos(x, y) {
-			iFrame.style.left = x + "px";
-			iFrame.style.top = y + "px";
+			iFrame.style.left = `${x}px`;
+			iFrame.style.top = `${y}px`;
 		}
 
 		// Gets the iFrame's position relative to the main document
@@ -386,14 +385,6 @@ class UserGui {
 			const frameBounds = iFrame.getBoundingClientRect();
 			
 			return { "x": frameBounds.x, "y" : frameBounds.y };
-		}
-
-		// Sets the frame body's offsetHeight
-		function setInnerFrameSize(x, y) {
-			const innerFrameElem = iFrame.contentDocument.querySelector("#gui");
-
-			innerFrameElem.style.width = `${x}px`;
-			innerFrameElem.style.height = `${y}px`;
 		}
 
 		// Gets the frame body's offsetHeight
@@ -416,46 +407,31 @@ class UserGui {
 
 		// Variables for resizer
 		let resizing = false,
-			lastFrameResizePos = { "x" : 0, "y" : 0 },
-			lastInnerFrameResizePos = { "x" : 0, "y" : 0 };
+			mousePos = { "x" : undefined, "y" : undefined },
+			lastFrame;
 
 		function handleResize(isInsideFrame, e) {
-			let framePos, framePos2;
+			if(mousePos.x == undefined && mousePos.y == undefined) {
+				mousePos.x = e.clientX;
+				mousePos.y = e.clientY;
 
-			if(isInsideFrame) {
-				framePos = lastInnerFrameResizePos;
-				framePos2 = lastFrameResizePos;
-			} else {
-				framePos = lastFrameResizePos;
-				framePos2 = lastInnerFrameResizePos;
+				lastFrame = isInsideFrame;
 			}
 
-			// Reset the variable to avoid a leap between changing from main frame to iframe
-			framePos2 = { "x" : 0, "y" : 0 }; 
+			const deltaX = mousePos.x - e.clientX,
+				  deltaY = mousePos.y - e.clientY;
 
 			const frameSize = getFrameSize();
-			const innerFrameSize = getInnerFrameSize();
+			const allowedSize = frameSize.width - deltaX > 160 && frameSize.height - deltaY > 90;
 
-			if(framePos.x == 0 && framePos.y == 0) {
-				framePos.x = e.clientX;
-				framePos.y = e.clientY;
-			}
-
-			const deltaX = framePos.x - e.clientX;
-			const deltaY = framePos.y - e.clientY;
-
-			// Delta [-50,50] (to avoid a huge leap between sizes)
-			// Slows the speed of resizing a bit, though
-			if((deltaX >= -50 && deltaX <= 50) && (deltaY >= -2 && deltaY <= 2)) {
-				// Current size - delta
+			if(isInsideFrame == lastFrame && allowedSize) {
 				setFrameSize(frameSize.width - deltaX, frameSize.height - deltaY);
-
-				// Current size - delta
-				setInnerFrameSize(innerFrameSize.x - deltaX, innerFrameSize.y - deltaY);
 			}
 
-			framePos.x = e.clientX;
-			framePos.y = e.clientY;
+			mousePos.x = e.clientX;
+			mousePos.y = e.clientY;
+
+			lastFrame = isInsideFrame;
 		}
 
 		function handleDrag(isInsideFrame, e) {
@@ -546,9 +522,6 @@ class UserGui {
 			resizing = false;
 		});
 
-		// Adjust the frame size every time the user clicks
-		this.document.addEventListener('click', adjustFrameSize);
-
 		// Listener for the close button, closes the internal GUI
 		this.document.querySelector("#button-close-gui").addEventListener('click', e => {
 			e.preventDefault();
@@ -556,6 +529,15 @@ class UserGui {
 			this.close();
 		});
 
+		const guiObserver = new MutationObserver(adjustFrameSize);
+		const guiElement = this.document.querySelector("#gui");
+
+		guiObserver.observe(guiElement, {
+			childList: true,
+			subtree: true,
+			attributes: true
+		});
+		
 		adjustFrameSize();
 	}
 
