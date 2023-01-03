@@ -25,7 +25,7 @@ Grant the userscript `GM_xmlhttpRequest`, `GM_getValue`, `GM_setValue` and requi
 // @grant       GM_getValue
 // @grant       GM_setValue
 // @grant       GM_xmlhttpRequest
-// @require     https://raw.githubusercontent.com/AugmentedWeb/UserGui/main/usergui.js
+// @require     https://github.com/AugmentedWeb/UserGui/releases/download/v1.0.0/usergui.js
 ```
 
 ### 2) Create a new instance
@@ -123,7 +123,7 @@ The final result could look like this,
 // @version     1.0
 // @author      HKR
 // @description This is an example userscript made for UserGui
-// @require     https://github.com/AugmentedWeb/UserGui/raw/main/usergui.js
+// @require     https://github.com/AugmentedWeb/UserGui/releases/download/v1.0.0/usergui.js
 // ==/UserScript==
 
 const Gui = new UserGui;
