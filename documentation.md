@@ -284,7 +284,7 @@ getConfig()
 >
 > **(Array)** *The saved GUI config as an object array. The objects contain a form element's name and value.*
 
-### GetConfig Function
+### ResetConfig Function
 
 ```js
 resetConfig()
@@ -301,7 +301,8 @@ resetConfig()
 > ### Returns
 >
 > None
-> 
+
+
 ### DispatchFormEvent Function
 
 ```js
