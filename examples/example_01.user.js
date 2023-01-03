@@ -8,7 +8,7 @@
 // @version     1.0
 // @author      HKR
 // @description This is an example userscript made for UserGui
-// @require     https://raw.githubusercontent.com/AugmentedWeb/UserGui/main/usergui.js
+// @require     https://github.com/AugmentedWeb/UserGui/releases/download/v1.0.0/usergui.js
 // @run-at      document-load
 // ==/UserScript==
 
