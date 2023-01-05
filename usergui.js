@@ -828,12 +828,20 @@ class UserGui {
 	
 	// Gets data from types: SELECT
 	getOption(name) {
-		return this.document.querySelector(`.field-${name}`).querySelector(`option[id*=${name}]:checked`).value;
+		const selectedArr = [...this.document.querySelector(`.field-${name} #${name}`).selectedOptions].map(({value}) => value);
+
+		return selectedArr.length == 1 ? selectedArr[0] : selectedArr;
 	}
 
 	// Sets data to types: SELECT
 	setOption(name, newOptionsValue) {
-		this.document.querySelector(`.field-${name}`).querySelector(`option[value=${newOptionsValue}]`).selected = true;
+		if(typeof newOptionsValue == 'object') {
+		    newOptionsValue.forEach(optionVal => {
+			this.document.querySelector(`.field-${name}`).querySelector(`option[value=${optionVal}]`).selected = true;
+		    });
+		} else {
+		    this.document.querySelector(`.field-${name}`).querySelector(`option[value=${newOptionsValue}]`).selected = true;
+		}
 
 		this.dispatchFormEvent(name);
 	}
