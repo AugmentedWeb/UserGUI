@@ -8,7 +8,7 @@ A Graphical user interface for userscripts. Creating user-friendly userscripts c
 // @grant       GM_getValue
 // @grant       GM_setValue
 // @grant       GM_xmlhttpRequest
-// @require     https://github.com/AugmentedWeb/UserGui/releases/download/v1.0.0/usergui.js
+// @require     https://github.com/AugmentedWeb/UserGui/raw/Release-1.0/usergui.js
 ```
 
 ## Feature overview
