@@ -271,7 +271,7 @@ class UserGui {
 
 	// Returns the GUI's whole document as string
 	async #createDocument() {
-		const bootstrapStyling = await this.#bypassCors("https://raw.githubusercontent.com/AugmentedWeb/UserGui/main/resources/bootstrap.css");
+		const bootstrapStyling = await this.#bypassCors("https://raw.githubusercontent.com/AugmentedWeb/UserGui/Release-1.0/resources/bootstrap.css");
 
 		const externalDocument = `
 		<!DOCTYPE html>
