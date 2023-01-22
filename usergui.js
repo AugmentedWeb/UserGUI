@@ -356,6 +356,16 @@ class UserGui {
 		return { "x" : x, "y": y };
 	}
 
+	#getCenterWindowPosition() {
+		const guiWidth = this.settings.window.size.width;
+		const guiHeight = this.settings.window.size.height;
+
+		const x = (window.innerWidth - guiWidth) / 2;
+		const y = (window.innerHeight - guiHeight) / 2;
+		
+		return { "x" : x, "y": y };
+	}
+
 	#initializeInternalGuiEvents(iFrame) {
 		// - The code below will consist mostly of drag and resize implementations
 		// - iFrame window <-> Main window interaction requires these to be done
@@ -619,7 +629,7 @@ class UserGui {
 		let left = 0, top = 0;
 
 		if(this.settings.window.centered) {
-			const centerPos = this.#getCenterScreenPosition();
+			const centerPos = this.#getCenterWindowPosition();
 
 			left = centerPos.x;
 			top = centerPos.y;
