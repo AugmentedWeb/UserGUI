@@ -124,6 +124,12 @@ class UserGui {
 		}
 	};
 
+	// Avoid sites alterting / spying UserGUI (The userscript needs to run at document-start for this to work)
+	#safeMainWindowFunctions = {
+		'open': window.open,
+		'onbeforeunload': window.onbeforeunload
+	}
+
 	// This error page will be shown if the user has not added any pages
 	#errorPage = (title, code) => `
 		<style>
@@ -568,7 +574,7 @@ class UserGui {
 			}
 
 			// Create a new window for the GUI
-			this.window = window.open("", this.settings.windowName, windowSettings);
+			this.window = this.#safeMainWindowFunctions.open("", this.settings.windowName, windowSettings);
 
 			if(!this.window) {
 				this.settings.messages.blockedPopups();
@@ -578,7 +584,7 @@ class UserGui {
 			// Write the document to the new window
 			this.window.document.write(await this.#createDocument());
 			this.window.document.close();
-			
+
 			if(!this.settings.gui.external.popup) {
 				this.window.document.body.style.width = `${this.settings.window.size.width}px`;
 
@@ -608,7 +614,7 @@ class UserGui {
 				readyFunction();
 			}
 
-			window.onbeforeunload = () => {
+			this.#safeMainWindowFunctions.onbeforeunload = () => {
 				// Close the GUI if parent window closes
 				this.close();
 			}
