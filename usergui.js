@@ -108,6 +108,7 @@ class UserGui {
 				`
 			},
 			"external" : {
+				"location": '',
 				"popup" : true,
 				"style" : `
 					.rendered-form {
@@ -561,8 +562,9 @@ class UserGui {
 		const noWindow = this.window?.closed;
 
 		if(noWindow || this.window == undefined) {
-			let pos = "";
+			const externalLocation = this.settings.gui.external.location;
 			let windowSettings = "";
+			let pos = "";
 
 			if(this.settings.window.centered && this.settings.gui.external.popup) {
 				const centerPos = this.#getCenterScreenPosition();
@@ -574,7 +576,7 @@ class UserGui {
 			}
 
 			// Create a new window for the GUI
-			this.window = this.#safeMainWindowFunctions.open("", this.settings.windowName, windowSettings);
+			this.window = this.#safeMainWindowFunctions.open(externalLocation, this.settings.windowName, windowSettings);
 
 			if(!this.window) {
 				this.settings.messages.blockedPopups();
