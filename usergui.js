@@ -108,7 +108,6 @@ class UserGui {
 				`
 			},
 			"external" : {
-				"location": '',
 				"popup" : true,
 				"style" : `
 					.rendered-form {
@@ -124,12 +123,6 @@ class UserGui {
 			"blockedPopups" : () => alert(`The GUI (graphical user interface) failed to open!\n\nPossible reason: The popups are blocked.\n\nPlease allow popups for this site. (${window.location.hostname})`)
 		}
 	};
-
-	// Avoid sites alterting / spying UserGUI (The userscript needs to run at document-start for this to work)
-	#safeMainWindowFunctions = {
-		'open': window.open,
-		'onbeforeunload': window.onbeforeunload
-	}
 
 	// This error page will be shown if the user has not added any pages
 	#errorPage = (title, code) => `
@@ -562,9 +555,8 @@ class UserGui {
 		const noWindow = this.window?.closed;
 
 		if(noWindow || this.window == undefined) {
-			const externalLocation = this.settings.gui.external.location;
-			let windowSettings = "";
 			let pos = "";
+			let windowSettings = "";
 
 			if(this.settings.window.centered && this.settings.gui.external.popup) {
 				const centerPos = this.#getCenterScreenPosition();
@@ -576,7 +568,7 @@ class UserGui {
 			}
 
 			// Create a new window for the GUI
-			this.window = this.#safeMainWindowFunctions.open(externalLocation, this.settings.windowName, windowSettings);
+			this.window = window.open("", this.settings.windowName, windowSettings);
 
 			if(!this.window) {
 				this.settings.messages.blockedPopups();
@@ -585,7 +577,6 @@ class UserGui {
 
 			// Write the document to the new window
 			this.window.document.write(await this.#createDocument());
-			this.window.document.close();
 
 			if(!this.settings.gui.external.popup) {
 				this.window.document.body.style.width = `${this.settings.window.size.width}px`;
@@ -616,7 +607,7 @@ class UserGui {
 				readyFunction();
 			}
 
-			this.#safeMainWindowFunctions.onbeforeunload = () => {
+			window.onbeforeunload = () => {
 				// Close the GUI if parent window closes
 				this.close();
 			}
