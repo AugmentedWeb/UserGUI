@@ -590,12 +590,12 @@ class UserGui {
 				}
 			}
 
-			// Dynamic sizing (only height)
+			// Dynamic sizing (only height & window.outerHeight no longer works on some browsers...)
 			this.window.resizeTo(
-				this.window.outerWidth,
+				this.settings.window.size.width,
 				this.settings.window.size.dynamicSize 
 					? this.window.document.body.offsetHeight + (this.window.outerHeight - this.window.innerHeight)
-					: this.window.outerHeight
+					: this.settings.window.size.height
 			);
 
 			this.document = this.window.document;
