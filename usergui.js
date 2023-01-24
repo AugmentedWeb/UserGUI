@@ -576,7 +576,9 @@ class UserGui {
 			}
 
 			// Write the document to the new window
+			this.window.document.open();
 			this.window.document.write(await this.#createDocument());
+			this.window.document.close();
 
 			if(!this.settings.gui.external.popup) {
 				this.window.document.body.style.width = `${this.settings.window.size.width}px`;
