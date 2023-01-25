@@ -23,6 +23,7 @@ A Graphical user interface for userscripts. Creating user-friendly userscripts c
 | Mobile   | Supports mobile devices, can't move window | Supports mobile devices |
 | Browsers   | Tested on Chromium & Firefox | Tested on Chromium & Firefox |
 | Image  | ![Internal GUI](media/example_gui.png) | ![External GUI](media/external_gui.png) |
+| Notes | Use the internal GUI when possible, it's more stable and works on most browsers. | Avoid using the external GUI. It's unstable due to different browsers restricting and altering the window.open function. |
 
 ### Easy to design
 
