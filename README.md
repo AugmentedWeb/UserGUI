@@ -1,4 +1,4 @@
-# UserGui
+# UserGUI
 
 <img src="media/usergui_logo.png" alt="logo" width="500"/>
 
