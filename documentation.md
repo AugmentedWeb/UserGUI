@@ -19,7 +19,7 @@
 
 ### 1) Setup the userscript header
 
-Grant the userscript `GM_xmlhttpRequest`, `GM_getValue`, `GM_setValue` and require the UserGui, like so.
+Grant the userscript `GM_xmlhttpRequest`, `GM_getValue`, `GM_setValue` and require the UserGUI, like so.
 
 ```js
 // @grant       GM_getValue
