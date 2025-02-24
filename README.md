@@ -2,7 +2,7 @@
 
 <img src="media/usergui_logo.png" alt="logo" width="500"/>
 
-A Graphical user interface for userscripts. Creating user-friendly userscripts can be a bit challenging, as the majority of regular users are scared to touch your code. UserGui allows you to unlock your userscript to more people, and create a more pleasing experience.
+A Graphical user interface for userscripts. Creating user-friendly userscripts can be a bit challenging, as the majority of regular users are scared to touch your code. UserGUI allows you to unlock your userscript to more people, and create a more pleasing experience.
 
 ```js
 // @grant       GM_getValue
@@ -27,9 +27,9 @@ A Graphical user interface for userscripts. Creating user-friendly userscripts c
 
 ### Easy to design
 
-UserGui is built around [BeautifyTools' Form Builder](https://beautifytools.com/html-form-builder.php). It eases the design process of your GUI's form so that you don't have to remember a million different commands and element names.
+UserGUI is built around [BeautifyTools' Form Builder](https://beautifytools.com/html-form-builder.php). It eases the design process of your GUI's form so that you don't have to remember a million different commands and element names.
 
-After designing the form, it can be exported as a HTML string. With one UserGui command it can be added to the GUI. The design process is increadibly easy and fast to do. You'll love it once you get used to it.
+After designing the form, it can be exported as a HTML string. With one UserGUI command it can be added to the GUI. The design process is increadibly easy and fast to do. You'll love it once you get used to it.
 
 ### Dynamic Navigation Tabs
 
@@ -54,11 +54,11 @@ The isolated environment and the option to use either an internal or external GU
 
 ### Bootstrap 5
 
-UserGui uses the power of [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/) to make beautiful interfaces. Bootstrap is loaded using the userscript manager's `GM_xmlHttpRequest` function. This is done in order to bypass possible CORS-limitations.
+UserGUI uses the power of [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/) to make beautiful interfaces. Bootstrap is loaded using the userscript manager's `GM_xmlHttpRequest` function. This is done in order to bypass possible CORS-limitations.
 
 ### Other
 
-UserGui doesn't need to load anything else than Bootstrap 5. Everything else functions from pure vanilla JavaScript.
+UserGUI doesn't need to load anything else than Bootstrap 5. Everything else functions from pure vanilla JavaScript.
 
 ## Known issues
 
@@ -67,4 +67,4 @@ UserGui doesn't need to load anything else than Bootstrap 5. Everything else fun
 
 ## Get started
 
-I'm glad you're interested in using UserGui, welcome! To get started, please take a look at the [documentation](documentation.md).
+I'm glad you're interested in using UserGUI, welcome! To get started, please take a look at the [documentation](documentation.md).
